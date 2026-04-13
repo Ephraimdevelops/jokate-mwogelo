@@ -7,21 +7,21 @@ export const seedDatabase = mutation({
     await ctx.db.insert("siteSettings", {
       key: "hero",
       value: {
-        title: "Advancing Tanzania’s <br /> <span class=\"text-accent italic\">Vision</span> On The <br /> Global Stage.",
-        name: "H.E. Togolani Edriss Mavura",
-        description: "Official platform of the Permanent Representative of the United Republic of Tanzania to the United Nations. Dedicated to economic diplomacy, sustainable development, and amplifying Africa's voice.",
-        primaryCta: { label: "Explore UN Initiatives", href: "/un-initiatives" },
-        secondaryCta: { label: "Read Latest Remarks", href: "/media" },
-        mandate: "United Republic of Tanzania",
-        posting: "United Nations, NY"
+        title: "Leading a Generation of <br /> <span class=\"text-gold italic\">Women Forward</span>.",
+        name: "Jokate Mwegelo",
+        description: "Official platform of Jokate Mwegelo. Built to shape the future of leadership, impact, and modern femininity in Tanzania and beyond.",
+        primaryCta: { label: "Explore Her Work", href: "/impact" },
+        secondaryCta: { label: "Support the Mission", href: "/get-involved" },
+        mandate: "Leader. Builder. Advocate.",
+        posting: "Dar es Salaam, Tanzania"
       }
     });
 
     // 2. Seed Initial Quote
     await ctx.db.insert("quotes", {
-      text: "Leadership is not a title to be held, but a service to be rendered. Diplomacy is the language of that service on the global stage.",
-      author: "Togolani Mavura",
-      source: "Ambassadorial Reflection",
+      text: "When we step into spaces that were not built for us, we don't just occupy room—we expand the horizons for those who follow.",
+      author: "Jokate Mwegelo",
+      source: "Leadership Reflection",
       isFeatured: true,
       publishedAt: Date.now(),
     });
@@ -29,19 +29,19 @@ export const seedDatabase = mutation({
     // 3. Seed Milestones
     const milestones = [
       {
-        year: "2026—Present",
-        role: "Permanent Representative to the United Nations",
-        organization: "United Republic of Tanzania | New York",
-        description: "Leading Tanzania's multilateral engagements at the UN Headquarters. Focusing on global peace, sustainable development, and amplifying Africa's strategic voice.",
-        highlights: ["Multilateral Governance", "Global Peace & Security"],
+        year: "2018—2021",
+        role: "District Commissioner",
+        organization: "Kisarawe District",
+        description: "Appointed as one of the youngest District Commissioners. Spearheaded the 'Tokomeza Zero' campaign to eradicate zero divisions in secondary schools.",
+        highlights: ["Tokomeza Zero Campaign", "Education Infrastructure"],
         order: 0
       },
       {
-        year: "2021—2026",
-        role: "Ambassador to the Republic of Korea",
-        organization: "United Republic of Tanzania | Seoul",
-        description: "Diplomatic mission centered on the Blue Economy, Energy Transition, and deepening technical cooperation with the Indo-Pacific.",
-        highlights: ["Blue Economy Champion", "Industrial Cooperation"],
+        year: "2012—Present",
+        role: "Founder & CEO",
+        organization: "Kidoti Loving",
+        description: "Founded an entrepreneurial venture focused on empowering the youth through affordable lifestyle brands and community initiatives.",
+        highlights: ["Youth Empowerment", "Entrepreneurial Excellence"],
         order: 1
       }
     ];
@@ -52,14 +52,14 @@ export const seedDatabase = mutation({
 
     // 4. Seed Initial Book
     await ctx.db.insert("books", {
-      title: "The Architecture of Karama",
-      slug: "architecture-of-karama",
-      description: "A profound inquiry into the convergent forces that shape modern leadership, through the lens of African diplomacy.",
-      content: "In 'The Architecture of Karama,' Ambassador Togolani Mavura explores the Swahili concept of Karama—the divine gift or talent—and how it interacts with personal effort and the currents of destiny...",
-      thumbnailUrl: "/images/book-thumb.png",
+      title: "Becoming: A Message for the Next Generation",
+      slug: "becoming-next-generation",
+      description: "A book for the girl who is still becoming. A message she will carry for life.",
+      content: "In this deeply personal and reflective book, Jokate Mwegelo shares the lessons of her journey—from the spotlight of media to the rigorous demands of public service...",
+      thumbnailUrl: "/images/jokate-book-thumb.png",
       purchaseLinks: [
-        { label: "Order Hardcover", url: "#" },
-        { label: "International Orders", url: "#" }
+        { label: "Sponsor a Copy", url: "/get-involved" },
+        { label: "Order Hardcover", url: "#" }
       ],
       publishedAt: Date.now(),
       isFeatured: true

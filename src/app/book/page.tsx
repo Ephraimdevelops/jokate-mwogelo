@@ -1,138 +1,98 @@
-"use client";
+'use client'
+import { PageTransition } from '@/components/brand/layout/PageTransition'
+import { SectionWrapper } from '@/components/brand/layout/SectionWrapper'
+import { Container } from '@/components/brand/layout/Container'
+import { NewsletterCta } from '@/components/brand/sections/NewsletterCta'
+import { motion } from 'framer-motion'
+import * as m from '@/lib/motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { ArrowRight, BookOpen, ShoppingBag, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
-
-export default function BookPage() {
-    const featuredBooks = useQuery(api.books.getFeatured);
-    
-    // Fallback static data if no backend data yet
-    const book = featuredBooks?.[0] || {
-        title: "The Architecture of Karama",
-        description: "A profound inquiry into the convergent forces that shape modern leadership, through the lens of African diplomacy.",
-        content: `In "The Architecture of Karama," Ambassador Togolani Mavura explores the Swahili concept of Karama—the divine gift or talent—and how it interacts with personal effort and the currents of destiny. Drawing from two decades of diplomatic service and personal reflections, Mavura challenges the conventional western hierarchies of leadership, proposing instead a model built on service, integrity, and the recognition of the inherent dignity in every individual.`,
-        purchaseLinks: [
-           { label: "Order Hardcover", url: "#" },
-           { label: "International Orders", url: "#" }
-        ],
-        thumbnailUrl: "/images/book-thumb.png"
-    };
-
-    return (
-        <main className="min-h-screen bg-background selection:bg-accent selection:text-primary">
-            <Header />
+export default function Book() {
+  return (
+    <PageTransition>
+      {/* 1. CINEMATIC BOOK HERO */}
+      <section className="relative w-full min-h-screen bg-brand-white flex items-center pt-32 pb-24 overflow-hidden">
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
             
-            <section className="pt-40 pb-20 overflow-hidden">
-                <div className="max-w-[1200px] mx-auto px-6">
-                    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_1.5fr] gap-20 items-center">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="relative aspect-[3/4] w-full max-w-sm mx-auto lg:ml-0 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-border/10"
-                        >
-                            <div className="absolute inset-0 bg-primary flex flex-col items-center justify-center p-12 text-center space-y-8 border-4 border-accent/20">
-                                <span className="uppercase text-accent font-bold">Togolani Mavura</span>
-                                <h1 className="text-4xl md:text-5xl font-cormorant font-medium text-primary-foreground leading-tight uppercase">
-                                    {book.title}
-                                </h1>
-                                <div className="h-px w-16 bg-accent" />
-                                <p className="uppercase text-primary-foreground/60">Essays on Leadership & Destiny</p>
-                            </div>
-                            <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-                        </motion.div>
+            {/* Left: Product Reveal */}
+            <motion.div 
+              variants={m.stagger} 
+              initial="hidden" 
+              animate="visible"
+              className="relative aspect-[3/4] w-full max-w-[500px] mx-auto lg:mx-0 shadow-2xl overflow-hidden bg-brand-black"
+            >
+               {/* 
+                 Since we don't have a specific book cover JPEG, 
+                 we create a cinematic placeholder branding.
+               */}
+               <div className="absolute inset-0 bg-brand-black flex flex-col items-center justify-center p-12 text-center">
+                  <span className="font-sans text-label text-brand-gold uppercase tracking-[0.3em] mb-12">Coming Soon</span>
+                  <h2 className="font-display text-[64px] leading-tight text-brand-white mb-4">The Art of Grace.</h2>
+                  <p className="font-sans text-body text-brand-muted/60 max-w-[280px]">Navigating Power and Purpose in the African Region.</p>
+                  <div className="mt-auto">
+                    <span className="font-display text-display-sm text-brand-white italic underline underline-offset-8 decoration-brand-gold/30">Jokate Mwegelo.</span>
+                  </div>
+               </div>
+               
+               {/* Pre-empting real image: <Image src="/images/book-cover.png" alt="The Art of Grace" fill className="object-cover" /> */}
+            </motion.div>
 
-                        <div className="space-y-12">
-                            <motion.div 
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="space-y-6"
-                            >
-                                <span className="uppercase text-accent font-bold block">New Release</span>
-                                <h1 className="text-6xl md:text-8xl font-medium font-cormorant leading-[1.1] uppercase">
-                                    {book.title.split(' ').map((word, i) => (
-                                        <span key={i}>
-                                            {word === 'Karama' ? <span className="text-accent italic">Karama</span> : word}{' '}
-                                            {i === 1 ? <br/> : null}
-                                        </span>
-                                    ))}
-                                </h1>
-                                <div className="h-px w-32 bg-accent/40" />
-                                <p className="text-2xl font-sans font-light text-primary leading-relaxed">
-                                    {book.description}
-                                </p>
-                            </motion.div>
+            {/* Right: Pitch & Actions */}
+            <motion.div variants={m.stagger} initial="hidden" animate="visible" className="flex flex-col">
+              <motion.span variants={m.fadeUp} className="text-brand-gold font-sans text-label uppercase tracking-widest mb-6 block">
+                 Executive Publication
+              </motion.span>
+              <motion.h1 variants={m.fadeUp} className="text-display-xl font-display text-brand-black leading-[1.0] mb-8">
+                 Leadership as an Act of Grace.
+              </motion.h1>
+              <motion.div variants={m.fadeUp} className="space-y-6 mb-12">
+                 <p className="text-body-lg font-sans text-brand-black opacity-90 leading-relaxed">
+                   In her debut publication, Jokate Mwegelo dissects the architecture of power in Tanzania and across East Africa. This is not a memoir — it is a manual for the next generation of women in governance.
+                 </p>
+                 <p className="text-body font-sans text-brand-muted leading-relaxed">
+                   From the boardrooms of Dar es Salaam to the district administration of Kisarawe, Jokate reveals why structural efficiency must be paired with emotional resonance to build movements that last.
+                 </p>
+              </motion.div>
 
-                            <motion.div 
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 }}
-                                className="flex flex-wrap gap-6"
-                            >
-                                {book.purchaseLinks?.map((link: any, i: number) => (
-                                    <Button key={i} variant={i === 0 ? "default" : "outline"} className="h-14 px-8 font-bold uppercase gap-3">
-                                        {i === 0 ? <ShoppingBag className="w-4 h-4 text-accent" /> : <Globe className="w-4 h-4 text-accent" />}
-                                        {link.label}
-                                    </Button>
-                                ))}
-                            </motion.div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+              <motion.div variants={m.fadeUp} className="flex flex-wrap gap-4 mb-8">
+                 <button className="bg-brand-black text-brand-white px-10 py-5 text-[12px] uppercase tracking-[0.15em] font-sans hover:bg-brand-plum transition-all duration-500 shadow-xl">
+                   Pre-order Now
+                 </button>
+                 <button className="border border-brand-black text-brand-black px-10 py-5 text-[12px] uppercase tracking-[0.15em] font-sans hover:bg-brand-surface transition-all duration-500">
+                   Read Preview
+                 </button>
+              </motion.div>
+              
+              <motion.p variants={m.fadeUp} className="text-[11px] font-sans text-brand-muted uppercase tracking-widest italic opacity-60">
+                Available in Paperback, Hardcover, and Digital formats. Summer 2026.
+              </motion.p>
+            </motion.div>
 
-            <section className="py-32 bg-secondary/5 border-y border-border/50">
-                <div className="max-w-[1200px] mx-auto px-6">
-                    <div className="max-w-[800px] mx-auto space-y-20">
-                        <div className="space-y-8">
-                             <h2 className="text-4xl font-cormorant font-medium uppercase">The Narrative</h2>
-                            <div 
-                                className="prose prose-lg dark:prose-invert font-sans text-muted-foreground leading-relaxed space-y-6"
-                                dangerouslySetInnerHTML={{ __html: book.content || "" }}
-                            />
-                        </div>
+          </div>
+        </Container>
+      </section>
 
-                        <div className="grid md:grid-cols-2 gap-12">
-                            {[
-                                { title: "Spiritual Foundations", desc: "Understanding the role of internal conviction in external leadership." },
-                                { title: "Diplomatic Strategy", desc: "How African nations can navigate the shifting global architecture." },
-                                { title: "Social Evolution", desc: "The movement from individual success to collective progress." },
-                                { title: "The Mavura Method", desc: "A practical framework for leading with Karama in any field." }
-                            ].map((topic, i) => (
-                                <div key={topic.title} className="space-y-4">
-                                    <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xs font-bold">
-                                        0{i+1}
-                                    </div>
-                                    <h3 className="text-xl font-medium font-primary">{topic.title}</h3>
-                                    <p className="text-muted-foreground font-sans text-sm leading-relaxed">{topic.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+      {/* 2. THE "WHY" SECTION */}
+      <SectionWrapper bg="surface" className="py-24 lg:py-48">
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24">
+            {[
+              { title: 'The Mandate', desc: 'Understanding the weight of public responsibility and how to carry it without losing your identity.' },
+              { title: 'The Strategy', desc: 'Practical frameworks for resource mobilization and community activation in rural districts.' },
+              { title: 'The Legacy', desc: 'How to build systems that outlive your term, ensuring sustainable growth for women and girls.' },
+            ].map((col, i) => (
+              <motion.div key={i} variants={m.fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col border-l border-brand-gold pl-8">
+                 <h3 className="font-display text-display-sm text-brand-black mb-4">{col.title}</h3>
+                 <p className="font-sans text-body text-brand-muted leading-relaxed">{col.desc}</p>
+              </motion.div>
+            ))}
+         </div>
+      </SectionWrapper>
 
-            <section className="py-32">
-                <div className="max-w-[1200px] mx-auto px-6 text-center space-y-12">
-                    <div className="max-w-2xl mx-auto space-y-6">
-                         <h2 className="text-4xl md:text-5xl font-cormorant uppercase">Join the Dialogue</h2>
-                        <p className="text-muted-foreground font-sans leading-relaxed">
-                            For book clubs, university lectures, or bulk inquiries for your 
-                            mission or organization, please reach out to our team.
-                        </p>
-                    </div>
-                    <Button variant="outline" className="h-14 px-12 border-accent/20 text-accent font-bold uppercase hover:bg-accent/5">
-                        Inquire About the Book <ArrowRight className="ml-3 w-4 h-4" />
-                    </Button>
-                </div>
-            </section>
+      {/* 3. COMMUNITY CTA (PINK CIRCLE) */}
+      <NewsletterCta />
 
-            <Footer />
-        </main>
-    );
+    </PageTransition>
+  )
 }

@@ -1,194 +1,73 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand colours */
+  --color-brand-black:   #0A0A0A;
+  --color-brand-white:   #F8F7F4;
+  --color-brand-gold:    #C9A96E;
+  --color-brand-plum:    #2D1B3D;
+  --color-brand-rose:    #8B3A52;
+  --color-brand-muted:   #6B6B6B;
+  --color-brand-surface: #F0EFE9;
+  --color-brand-border:  #E2E0D8;
 
-@custom-variant dark (&:is(.dark *));
-@plugin "@tailwindcss/typography";
+  /* Fonts */
+  --font-display: 'Marcellus', Georgia, serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
 
-:root {
-  /* Base Colors - Diplomatic Archive Theme */
-  --primary: #0F1419; /* Deep Navy */
-  --primary-foreground: #FAF7F2;
+  /* Display font sizes (clamp = fluid, no breakpoints needed) */
+  --font-size-display-2xl: clamp(48px, 6vw, 96px);
+  --font-size-display-xl:  clamp(40px, 5vw, 76px);
+  --font-size-display-lg:  clamp(32px, 4vw, 56px);
+  --font-size-display-md:  clamp(26px, 3vw, 42px);
+  --font-size-display-sm:  clamp(20px, 2.5vw, 32px);
+  --font-size-label:       11px;
+  --font-size-body-lg:     18px;
+  --font-size-body:        16px;
+  --font-size-body-sm:     14px;
 
-  --secondary: #FAF7F2; /* Cream */
-  --secondary-foreground: #0F1419;
+  /* Line heights for display sizes */
+  --line-height-display-2xl: 1.0;
+  --line-height-display-xl:  1.05;
+  --line-height-display-lg:  1.1;
+  --line-height-display-md:  1.15;
+  --line-height-display-sm:  1.2;
+  --line-height-body-lg:     1.8;
+  --line-height-body:        1.8;
+  --line-height-body-sm:     1.7;
+  --line-height-label:       1.4;
 
-  --accent: #D4AF37; /* Gold */
-  --accent-foreground: #0F1419;
+  /* Letter spacing */
+  --letter-spacing-display-2xl: -0.02em;
+  --letter-spacing-display-xl:  -0.02em;
+  --letter-spacing-display-lg:  -0.01em;
+  --letter-spacing-label:        0.12em;
 
-  --muted: #F5F5F5;
-  --muted-foreground: #636E72;
-
-  --card: #FAF7F2;
-  --card-foreground: #0F1419;
-
-  --border: #E1E1E1;
-  --input: #E1E1E1;
-  --ring: #D4AF37;
-
-  /* Specific Shades */
-  --navy: #0F1419;
-  --gold: #D4AF37;
-  --cream: #FAF7F2;
-
-  --radius: 0.25rem; /* More formal, less rounded */
-  --background: #FCFCFC;
-  --foreground: #0F1419;
-
-  --popover: #FCFCFC;
-  --popover-foreground: #0F1419;
-  --destructive: oklch(0.577 0.245 27.325);
-
-  --font-sans: "Avenir Next", "Avenir", var(--font-inter), sans-serif;
-  --font-serif: var(--font-cormorant);
-  --font-mono: var(--font-jetbrains);
+  /* Spacing */
+  --spacing-section:       120px;
+  --spacing-section-sm:    80px;
+  --spacing-container:     120px;
+  --spacing-container-sm:  24px;
 }
+
+/* Base resets */
+* { box-sizing: border-box; }
 
 body {
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-black);
   font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background);
-  color: var(--foreground);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: -0.01em; /* Normal, non-expanded */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
 }
 
-.text-visible {
-  letter-spacing: -0.01em;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--primary);
-}
-
-
-
-.paper-texture {
-  position: relative;
-}
-
-.paper-texture::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.02;
-  pointer-events: none;
-  z-index: 1;
-}
-
-
-.diplomatic-line {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--accent), transparent);
-  width: 100%;
-  opacity: 0.3;
-}
-
-.diplomatic-line-vertical {
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
-  height: 100%;
-  opacity: 0.3;
-}
-
-.subtle-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 12px 0 rgba(15, 20, 25, 0.02);
-}
-
-
-.mask-linear-gradient {
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-/* Marquee Animation Classes */
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.animate-marquee2 {
-  animation: marquee2 30s linear infinite;
-}
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --font-sans: "Avenir Next", "Avenir", var(--font-montserrat), sans-serif;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
-/* Removed Dark Mode overrides */
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-@keyframes scroll-x {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.animate-scroll-x {
-  display: flex;
-  width: max-content;
-  animation: scroll-x 60s linear infinite;
-}
-
-.pause {
-  animation-play-state: paused;
-}
+h1 { font-size: var(--font-size-display-2xl); line-height: 1.0; letter-spacing: -0.02em; }
+h2 { font-size: var(--font-size-display-xl);  line-height: 1.05; letter-spacing: -0.02em; }
+h3 { font-size: var(--font-size-display-lg);  line-height: 1.1;  letter-spacing: -0.01em; }
+h4 { font-size: var(--font-size-display-md);  line-height: 1.15; }

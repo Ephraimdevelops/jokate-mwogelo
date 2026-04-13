@@ -1,88 +1,99 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import { X, Menu, Search, Heart, ShoppingCart, User } from "lucide-react";
+
+const NAV_ITEMS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Impact", href: "/impact" },
+  { label: "Initiatives", href: "/initiatives" },
+  { label: "Media", href: "/media" },
+  { label: "Book", href: "/book" },
+  { label: "Partner", href: "/partner" },
+  { label: "Contact", href: "/contact" },
+];
 
 export function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    const navItems = [
-        { name: "Home", href: "/" },
-        { name: "Thoughts", href: "/ideas" },
-        { name: "Book", href: "/book" },
-        { name: "Media & Influence", href: "/community" },
-        { name: "Enquire", href: "/contact" },
-        { name: "Togolani", href: "/togolani" },
-    ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    return (
-        <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-            <header
-                className={cn(
-                    "w-full transition-all duration-300 border-b",
-                    isScrolled
-                        ? "bg-background/98 border-border py-4 shadow-sm"
-                        : "bg-background border-transparent py-6"
-                )}
+  return (
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 h-[80px] flex items-center transition-all duration-300 ease-in-out bg-white ${
+          scrolled ? "shadow-sm" : ""
+        }`}
+      >
+        <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+          {/* LEFT — Logo */}
+          <Link href="/" className="shrink-0 mt-1">
+            <span className="font-display text-[22px] font-bold text-plum tracking-[0.1em] uppercase">JOKATE MWEGELO.</span>
+          </Link>
 
-            >
-                <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="shrink-0">
-                        <span className="text-xl font-sans tracking-tight font-bold text-slate-950">
-                            TOGOLANI MAVURA
-                        </span>
-                    </Link>
+          {/* RIGHT — Nav + Icons */}
+          <div className="flex items-center justify-end flex-grow gap-12 lg:gap-16">
+            <nav className="hidden xl:flex items-center gap-8">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="font-body text-[13px] text-plum font-medium hover:text-rose transition-colors duration-300"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
-
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-8">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="text-[13px] font-semibold text-foreground/80 hover:text-accent transition-colors tracking-normal"
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                    </nav>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="lg:hidden p-2 text-foreground"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
-
-                {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <div className="absolute top-full left-0 w-full bg-background border-b shadow-xl p-8 flex flex-col space-y-6 lg:hidden animate-in fade-in slide-in-from-top-4 duration-300 h-[calc(100vh-80px)] overflow-y-auto">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="text-lg font-bold hover:text-accent transition-colors uppercase tracking-normal text-[13px] flex items-center justify-between"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
-                )}
-            </header>
+            <div className="flex items-center gap-5">
+              <button aria-label="Search" className="hidden sm:block text-plum hover:text-rose transition-colors duration-300"><Search size={18} strokeWidth={1.5} /></button>
+              <button aria-label="Favorites" className="hidden sm:block text-plum hover:text-rose transition-colors duration-300"><Heart size={18} strokeWidth={1.5} /></button>
+              <button aria-label="Cart" className="hidden sm:block text-plum hover:text-rose transition-colors duration-300"><ShoppingCart size={18} strokeWidth={1.5} /></button>
+              <button aria-label="Account" className="hidden sm:block text-plum hover:text-rose transition-colors duration-300"><User size={18} strokeWidth={1.5} /></button>
+              
+              <button
+                onClick={() => setIsOpen(true)}
+                className="xl:hidden text-plum"
+                aria-label="Open menu"
+              >
+                <Menu size={22} strokeWidth={1.5} />
+              </button>
+            </div>
+          </div>
         </div>
-    );
+      </header>
+
+      {/* Mobile Drawer */}
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] xl:hidden">
+          <div className="absolute inset-0 bg-white/95 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+          <nav className="relative ml-auto w-full max-w-sm h-full bg-white shadow-2xl flex flex-col justify-center px-12 text-plum">
+            <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-plum hover:text-rose transition-colors" aria-label="Close">
+              <X size={24} strokeWidth={1.5} />
+            </button>
+            <ul className="space-y-6">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} onClick={() => setIsOpen(false)} className="block text-2xl font-display uppercase tracking-wide hover:text-rose transition-colors duration-300">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-12 pt-8 border-t border-plum/10">
+              <Link href="/partner#sponsor" onClick={() => setIsOpen(false)} className="text-rose text-sm font-sans font-medium uppercase tracking-[0.1em]">Support a Student →</Link>
+            </div>
+          </nav>
+        </div>
+      )}
+    </>
+  );
 }
