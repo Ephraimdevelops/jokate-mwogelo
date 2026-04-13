@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { motion } from 'framer-motion'
 import * as m from '@/lib/motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const mockPressItems = [
   { _id: '1', publication: 'Forbes Africa', headline: 'Jokate Mwegelo named among 30 Under 30 defining the continent.', date: 'NOV 2017', category: 'award', href: '#', thumbnailUrl: '/images/jokate-brown-suit-full.jpg' },

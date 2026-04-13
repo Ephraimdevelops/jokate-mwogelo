@@ -19,9 +19,9 @@ export function HeroSlider() {
       </div>
 
       <div className="w-full h-full flex flex-col lg:flex-row max-w-[1440px] mx-auto relative px-6 lg:px-0 lg:pl-24">
-        
+
         {/* Left: Text Content */}
-        <motion.div 
+        <motion.div
           className="w-full lg:w-1/2 h-full flex flex-col justify-center relative z-10 pt-16 lg:pt-0 lg:pr-12"
           variants={stagger}
           initial="hidden"
@@ -34,30 +34,30 @@ export function HeroSlider() {
             <span className="text-brand-gold">·</span>
             <span className="text-brand-muted text-[13px] uppercase tracking-[0.1em] font-sans">Former DC, 3 Regions</span>
           </motion.div>
-          
-          <motion.h1 
-            variants={fadeUp} 
+
+          <motion.h1
+            variants={fadeUp}
             className="text-display-xl text-brand-black font-display max-w-[800px] mb-8"
           >
             Shaping the next generation of women leaders.
           </motion.h1>
-          
-          <motion.p 
-            variants={fadeUp} 
+
+          <motion.p
+            variants={fadeUp}
             className="text-body-lg text-brand-black font-sans max-w-[500px] mb-12"
           >
             A politician, builder, and voice for every girl who dares to lead. Rooted in Tanzania. Reaching across a continent.
           </motion.p>
-          
+
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="bg-brand-black text-brand-white hover:bg-brand-plum transition-colors px-8 py-4 text-[12px] uppercase tracking-[0.1em] font-sans"
             >
               Meet Jokate
             </Link>
-            <Link 
-              href="/book" 
+            <Link
+              href="/book"
               className="group flex items-center gap-2 text-brand-black px-8 py-4 text-[12px] uppercase tracking-[0.1em] font-sans relative"
             >
               <span className="relative z-10 flex items-center gap-2 group-hover:text-brand-white transition-colors duration-300">
@@ -78,21 +78,21 @@ export function HeroSlider() {
 
         {/* Right: Image (Bleeds to edge) */}
         <div className="w-full lg:w-1/2 h-[50vh] lg:h-full relative mt-12 lg:mt-0 overflow-hidden">
-           <motion.div 
-             className="w-full h-full relative"
-             variants={kenBurns}
-             initial="initial"
-             animate="animate"
-           >
-             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-brand-white/5 to-brand-white/30 z-10" /> 
-             <Image 
-               src="/images/home-hero-new.png" 
-               alt="Hon. Jokate Mwegelo" 
-               fill 
-               className="object-cover object-top" 
-               priority 
-             />
-           </motion.div>
+          <motion.div
+            className="w-full h-full relative"
+            variants={kenBurns}
+            initial="initial"
+            animate="animate"
+          >
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-brand-white/5 to-brand-white/30 z-10" />
+            <Image
+              src="/images/jokate-white-suit-2.png"
+              alt="Hon. Jokate Mwegelo"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+          </motion.div>
         </div>
       </div>
     </section>
