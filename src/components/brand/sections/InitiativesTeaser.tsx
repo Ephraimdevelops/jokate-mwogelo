@@ -8,6 +8,13 @@ import { fadeUp, stagger } from '@/lib/motion'
 export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsletter') => void }) {
   const movements = [
     { 
+      name: 'Governance Initiatives', 
+      category: 'The Work', 
+      image: '/images/jokate-rally.jpg', 
+      desc: 'Advancing educational infrastructure and regional economic empowerment programs.',
+      href: '/initiatives'
+    },
+    { 
       name: 'Jokate Pink Circle', 
       category: 'The Community', 
       image: '/images/jokate-brown-suit-full.jpg', 
@@ -15,17 +22,17 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
       onClick: () => onOpenModal('newsletter')
     },
     { 
-      name: 'Organisation', 
-      category: 'The Structure', 
+      name: 'The Organisation', 
+      category: 'The Non-Profit', 
       image: '/images/features-team.png', 
-      desc: 'Formal mentorship, resource mobilization, and direct regional empowerment programs.',
-      href: '/partner'
+      desc: 'Mobilizing resources and strategic partnerships for sustainable community impact.',
+      href: '/impact'
     },
     { 
       name: 'The Art of Grace', 
       category: 'The Publication', 
-      image: '/images/hero-portrait.png', 
-      desc: 'Deep diving into leadership, power, and the strategic acts of grace in governance.',
+      image: '/images/jokate-white-suit.png', 
+      desc: 'Strategic insights into leadership, power, and the application of grace in governance.',
       href: '/book'
     },
   ]
@@ -58,7 +65,7 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-brand-border">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-y border-brand-border">
         {movements.map((move, i) => {
           const Content = (
             <div className={`relative h-[500px] md:h-[600px] group overflow-hidden block ${i !== movements.length - 1 ? 'md:border-r border-brand-border' : ''}`}>

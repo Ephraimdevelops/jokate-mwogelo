@@ -33,21 +33,21 @@ export function BriefBio({ onOpenModal }: { onOpenModal: (type: 'donation' | 'pa
               variants={fadeUp} 
               className="text-brand-gold font-sans text-label uppercase tracking-widest mb-6 block"
             >
-              FORBES 30 UNDER 30 · ZIFF BEST ACTRESS · UN SPEAKER
+              Public Servant & Executive Leader
             </motion.span>
             
             <motion.h2 
               variants={fadeUp} 
               className="text-display-lg text-brand-white font-display mb-8 leading-[1.1]"
             >
-              A leader forged in three regions.
+              Jokate Mwegelo
             </motion.h2>
             
             <motion.p 
               variants={fadeUp} 
               className="text-body-lg text-brand-white/70 font-sans mb-12 max-w-[700px] leading-relaxed"
             >
-              Her governance record in Kisarawe, Temeke, and Korogwe proves that structural efficiency and deep community resonance can coexist. She built schools where there were none, and empowered thousands.
+              Jokate Mwegelo is a Tanzanian politician and executive who has served as District Commissioner for Kisarawe, Temeke, and Korogwe. Her work focuses on implementing structural governance, advancing education infrastructure, and driving sustainable economic empowerment across the region.
             </motion.p>
             
             <motion.div variants={fadeUp} className="flex flex-wrap gap-8 items-center">

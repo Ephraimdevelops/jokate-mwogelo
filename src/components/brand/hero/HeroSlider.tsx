@@ -37,7 +37,7 @@ export function HeroSlider() {
 
           <motion.h1
             variants={fadeUp}
-            className="text-display-xl text-brand-black font-display max-w-[800px] mb-8"
+            className="text-display-2xl text-brand-black font-display max-w-[800px] mb-8"
           >
             Shaping the next generation of women leaders.
           </motion.h1>

@@ -6,30 +6,30 @@ import { fadeUp, stagger } from '@/lib/motion'
 const mockFeeds = [
   {
     id: 1,
-    category: 'Newsletter',
-    headline: 'The courage to lead when the room is silent.',
-    date: 'Oct 12, 2025',
-    href: '/book/the-courage-to-lead',
-    thumbnailUrl: '/images/jokate-white-suit.png',
-    excerpt: 'An inside look at the isolation often felt at the top of political and structural leadership, and how developing a deep internal compass is the only way to navigate uncharted territory without losing your core values.'
+    category: 'Interview',
+    headline: 'Governance, Grace, and the Global Mandate.',
+    date: 'Oct 24, 2025',
+    href: '/media/governance-interview',
+    thumbnailUrl: '/images/jokate-black-suit.png',
+    excerpt: 'An exclusive sit-down on the structural requirements for leadership in the next decade, and the role of administrative precision in achieving community impact.'
   },
   {
     id: 2,
-    category: 'Press',
+    category: 'Appearance',
     headline: 'Jokate Mwegelo addresses the UN CSW69 in New York.',
     date: 'Sep 28, 2025',
     href: '/media/un-csw69-address',
-    thumbnailUrl: '/images/jokate-black-suit.png',
-    excerpt: 'Delivering physical mandates to global governance. Jokate breaks down the actionable steps taken in Tanzania to close the gendered economic gap, presenting a model African nations can replicate seamlessly.'
+    thumbnailUrl: '/images/jokate-white-suit.png',
+    excerpt: 'Delivering the keynote on youth inclusion and structural economic empowerment at the United Nations Commission on the Status of Women.'
   },
   {
     id: 3,
-    category: 'Initiatives',
-    headline: 'Inter-school Bonanza reaches 20 schools in Dar es Salaam.',
+    category: 'Feature',
+    headline: 'Building the Doors: The 2025 Empowerment Strategy.',
     date: 'Aug 14, 2025',
-    href: '/initiatives/inter-school-bonanza',
+    href: '/initiatives/empowerment-strategy',
     thumbnailUrl: '/images/jokate-rally.jpg',
-    excerpt: 'The expansion of the inter-school networks marks a monumental shift in how young students socialize, compete, and educate one another across municipal borders, building a unified cohort of future leaders.'
+    excerpt: 'A comprehensive deep-dive into the upcoming non-profit structure and the national pipeline for female leadership across the region.'
   }
 ]
 
@@ -37,8 +37,8 @@ export function LatestFeed() {
   return (
     <SectionWrapper bg="white">
       <div className="flex justify-between items-end mb-16">
-        <h2 className="font-display text-display-md text-brand-black">
-          Latest
+        <h2 className="font-display text-display-lg text-brand-black">
+          Media & Latest Updates
         </h2>
         <a href="/media" className="hidden sm:flex text-brand-black text-[11px] uppercase tracking-[0.1em] font-sans items-center gap-2 hover:gap-3 transition-all duration-300 hover:text-brand-rose">
           View all updates <span className="text-brand-gold text-[16px] leading-[0]">→</span>

@@ -3,12 +3,11 @@ import React, { useState } from 'react'
 import { PageTransition } from '@/components/brand/layout/PageTransition'
 import { HeroSlider } from '@/components/brand/hero/HeroSlider'
 import { BriefBio } from '@/components/brand/sections/BriefBio'
-import { AboutSummary } from '@/components/brand/sections/AboutSummary'
 import { InitiativesTeaser } from '@/components/brand/sections/InitiativesTeaser'
-import { HorizontalGallery } from '@/components/brand/sections/HorizontalGallery'
 import { LatestFeed } from '@/components/brand/sections/LatestFeed'
 import { NewsletterCta } from '@/components/brand/sections/NewsletterCta'
 import { HomeModals } from '@/components/brand/sections/HomeModals'
+import { ProofBar } from '@/components/brand/sections/ProofBar'
 
 const galleryImages = [
   { src: '/images/jokate-white-suit-2.png', alt: 'Jokate Mwegelo addressing the UN Commission on the Status of Women, New York, March 2025', label: 'UN CSW69, New York', category: 'Diplomacy · 2025' },
@@ -29,17 +28,16 @@ export default function Home() {
       {/* 1. Hero Section */}
       <HeroSlider />
       
+      {/* Highlights (from media page) */}
+      <div className="py-4 border-b border-brand-border bg-brand-surface">
+         <ProofBar />
+      </div>
+
       {/* 2. Brief Bio (Dark Section) */}
       <BriefBio onOpenModal={(type) => setActiveModal(type)} />
       
-      {/* 3. About Summary (A leader is forged) */}
-      <AboutSummary />
-      
-      {/* 4. Initiatives / Movements (Pink Circle, Organisation, Book) */}
+      {/* 3. Initiatives / Movements (Pink Circle, Organisation, Book) */}
       <InitiativesTeaser onOpenModal={(type) => setActiveModal(type)} />
-      
-      {/* 5. Horizontal Scroll Gallery */}
-      <HorizontalGallery images={galleryImages} />
 
       {/* 6. Media / Latest Posts */}
       <LatestFeed />
