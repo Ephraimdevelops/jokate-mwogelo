@@ -22,7 +22,7 @@ export function HeroSlider() {
 
         {/* Left: Text Content */}
         <motion.div
-          className="w-full lg:w-1/2 h-full flex flex-col justify-center relative z-10 pt-16 lg:pt-0 lg:pr-12"
+          className="w-full lg:w-[60%] h-full flex flex-col justify-center relative z-10 pt-16 lg:pt-0"
           variants={stagger}
           initial="hidden"
           animate="visible"
@@ -77,7 +77,7 @@ export function HeroSlider() {
         </motion.div>
 
         {/* Right: Image (Bleeds to edge) */}
-        <div className="w-full lg:w-1/2 h-[50vh] lg:h-full relative mt-12 lg:mt-0 overflow-hidden">
+        <div className="w-full lg:w-[40%] h-[50vh] lg:h-full relative mt-12 lg:mt-0 overflow-hidden">
           <motion.div
             className="w-full h-full relative"
             variants={kenBurns}
