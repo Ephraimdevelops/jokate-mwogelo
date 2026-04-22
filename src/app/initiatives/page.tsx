@@ -34,7 +34,7 @@ export default function Initiatives() {
                  className="relative aspect-square md:aspect-[16/9] lg:aspect-square w-full bg-brand-surface overflow-hidden shadow-2xl"
                >
                   <Image 
-                    src="/images/jokate-rally.jpg" 
+                    src="/images/jokate-summit-podium.jpg" 
                     alt="Gathering in the community" 
                     fill 
                     className="object-cover"

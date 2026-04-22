@@ -21,7 +21,7 @@ export default function Leadership() {
           className="absolute inset-0 w-full h-full"
         >
           <Image 
-            src="/images/jokate-brown-suit-full.jpg" 
+            src="/images/jokate-speaking-mic.jpg" 
             alt="Jokate Urban Mwegelo" 
             fill 
             className="object-cover object-top opacity-60"
@@ -86,7 +86,7 @@ export default function Leadership() {
               </div>
             </motion.div>
             <div className="relative aspect-square lg:aspect-[4/5] bg-brand-surface shadow-2xl overflow-hidden group">
-               <Image src="/images/jokate-black-suit.png" alt="Executive Portrait" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+               <Image src="/images/jokate-office-desk.jpg" alt="Executive Portrait" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                <div className="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </div>
           </div>

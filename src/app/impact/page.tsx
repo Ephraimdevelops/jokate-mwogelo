@@ -162,7 +162,7 @@ export default function Impact() {
         title="Supporting Youth to Build Stable Businesses"
         subtitle="Economic Formalization"
         description="Transitioning the informal hustle into collective economic power through structural support and loan access."
-        image="/images/features-team.png"
+        image="/images/jokate-summit-auditorium.jpg"
         points={[
           "Formalizing thousands of individual youth traders into structured groups.",
           "Unlocking direct access to financing and commercial credit.",
@@ -176,7 +176,7 @@ export default function Impact() {
         title="Representing the Voice of Tanzania"
         subtitle="International Engagement"
         description="Jokate has represented our nation at international forums, including the United Nations, sharing our local successes with the world."
-        image="/images/jokate-white-suit-2.png"
+        image="/images/jokate-summit-wide.jpg"
         points={[
           "High-level youth representation in global development policy.",
           "Advocating for gender-responsive policies on the world stage.",
