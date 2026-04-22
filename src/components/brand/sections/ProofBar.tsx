@@ -31,7 +31,7 @@ export function ProofBar() {
             <span className="font-display text-[22px] md:text-[28px] text-brand-black mb-2 opacity-90 block">
               {proof.label}
             </span>
-            <span className="font-sans text-label text-brand-gold uppercase tracking-[0.1em]">
+            <span className="font-sans text-label text-brand-accent uppercase tracking-[0.1em]">
               {proof.year}
             </span>
           </div>

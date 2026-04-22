@@ -7,6 +7,7 @@
   --color-brand-gold:    #C9A96E;
   --color-brand-plum:    #2D1B3D;
   --color-brand-rose:    #8B3A52;
+  --color-brand-accent:  #D44A7E;
   --color-brand-muted:   #6B6B6B;
   --color-brand-surface: #F0EFE9;
   --color-brand-border:  #E2E0D8;
@@ -16,8 +17,8 @@
   --font-sans:    'DM Sans', system-ui, sans-serif;
 
   /* Display font sizes (clamp = fluid, no breakpoints needed) */
-  --font-size-display-2xl: clamp(48px, 6vw, 96px);
-  --font-size-display-xl:  clamp(40px, 5vw, 76px);
+  --font-size-display-2xl: clamp(42px, 5.5vw, 84px);
+  --font-size-display-xl:  clamp(36px, 4.5vw, 68px);
   --font-size-display-lg:  clamp(32px, 4vw, 56px);
   --font-size-display-md:  clamp(26px, 3vw, 42px);
   --font-size-display-sm:  clamp(20px, 2.5vw, 32px);

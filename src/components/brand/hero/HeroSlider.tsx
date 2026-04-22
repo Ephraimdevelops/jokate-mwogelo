@@ -10,7 +10,7 @@ export function HeroSlider() {
     <section className="relative w-full h-[calc(100vh-96px)] min-h-[600px] bg-brand-white overflow-hidden flex items-center">
       {/* Scroll indicator - absolute left */}
       <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-[10px] tracking-[0.2em] uppercase text-brand-muted scroll-indicator items-center gap-4 z-20">
-        <span className="w-12 h-[1px] bg-brand-gold"></span> SCROLL
+        <span className="w-12 h-[1px] bg-brand-accent"></span> SCROLL
       </div>
 
       {/* Slide counter - absolute right */}
@@ -18,7 +18,7 @@ export function HeroSlider() {
         01 <span className="text-brand-muted mx-1">/</span> 04
       </div>
 
-      <div className="w-full h-full flex flex-col lg:flex-row max-w-[1440px] mx-auto relative px-6 lg:px-0 lg:pl-24">
+      <div className="w-full h-full flex flex-col lg:flex-row max-w-[1440px] mx-auto relative px-container-sm lg:px-container">
 
         {/* Left: Text Content */}
         <motion.div
@@ -29,9 +29,9 @@ export function HeroSlider() {
         >
           <motion.div variants={fadeUp} className="mb-6 flex items-center gap-4 overflow-hidden">
             <span className="text-brand-muted text-[13px] uppercase tracking-[0.1em] font-sans">Secretary General, UWT</span>
-            <span className="text-brand-gold">·</span>
+            <span className="text-brand-accent">·</span>
             <span className="text-brand-muted text-[13px] uppercase tracking-[0.1em] font-sans">CCM</span>
-            <span className="text-brand-gold">·</span>
+            <span className="text-brand-accent">·</span>
             <span className="text-brand-muted text-[13px] uppercase tracking-[0.1em] font-sans">Former DC, 3 Regions</span>
           </motion.div>
 
@@ -61,7 +61,7 @@ export function HeroSlider() {
               className="group flex items-center gap-2 text-brand-black px-8 py-4 text-[12px] uppercase tracking-[0.1em] font-sans relative"
             >
               <span className="relative z-10 flex items-center gap-2 group-hover:text-brand-white transition-colors duration-300">
-                Join the Community <span className="text-brand-gold font-sans text-[16px] leading-[0] ml-1">→</span>
+                Join the Community <span className="text-brand-accent font-sans text-[16px] leading-[0] ml-1">→</span>
               </span>
               <span className="absolute inset-0 w-0 group-hover:w-full h-full bg-brand-black transition-all duration-300 ease-out z-0"></span>
               <span className="absolute inset-0 w-full h-full border border-brand-black z-[-1]"></span>

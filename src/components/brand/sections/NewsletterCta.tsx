@@ -29,7 +29,7 @@ export function NewsletterCta() {
         >
           <motion.span 
             variants={fadeUp} 
-            className="text-brand-gold font-sans text-label uppercase tracking-widest mb-4 block"
+            className="text-brand-accent font-sans text-label uppercase tracking-widest mb-4 block"
           >
             Exclusive Community
           </motion.span>
@@ -52,22 +52,22 @@ export function NewsletterCta() {
                 <input 
                   type="email" 
                   placeholder="Your official email address" 
-                  className="w-full bg-transparent border-b border-brand-white/20 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold transition-colors py-4 text-body font-sans"
+                  className="w-full bg-transparent border-b border-brand-white/20 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-accent transition-colors py-4 text-body font-sans"
                   required
                 />
               </div>
               <button 
                 type="submit" 
-                className="group relative w-full bg-brand-white text-brand-black hover:bg-brand-gold hover:text-brand-white transition-all duration-500 py-5 font-sans uppercase text-[12px] tracking-[0.2em] flex items-center justify-center gap-2"
+                className="group relative w-full bg-brand-white text-brand-black hover:bg-brand-accent hover:text-brand-white transition-all duration-500 py-5 font-sans uppercase text-[12px] tracking-[0.2em] flex items-center justify-center gap-2"
               >
                 Become a Member
                 <span className="text-[16px] leading-[0] transition-transform duration-500 group-hover:translate-x-2">→</span>
               </button>
               <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-brand-muted/40 font-sans">
                 <span>Direct Access</span>
-                <span className="w-1 h-1 bg-brand-gold rounded-full" />
+                <span className="w-1 h-1 bg-brand-accent rounded-full" />
                 <span>Mentorship Updates</span>
-                <span className="w-1 h-1 bg-brand-gold rounded-full" />
+                <span className="w-1 h-1 bg-brand-accent rounded-full" />
                 <span>Zero Spam</span>
               </div>
             </form>

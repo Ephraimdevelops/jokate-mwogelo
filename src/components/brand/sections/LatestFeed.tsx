@@ -37,11 +37,11 @@ export function LatestFeed() {
   return (
     <SectionWrapper bg="white">
       <div className="flex justify-between items-end mb-16">
-        <h2 className="font-display text-display-lg text-brand-black">
+        <h2 className="font-display text-display-md text-brand-black">
           Media & Latest Updates
         </h2>
         <a href="/media" className="hidden sm:flex text-brand-black text-[11px] uppercase tracking-[0.1em] font-sans items-center gap-2 hover:gap-3 transition-all duration-300 hover:text-brand-rose">
-          View all updates <span className="text-brand-gold text-[16px] leading-[0]">→</span>
+          View all updates <span className="text-brand-accent text-[16px] leading-[0]">→</span>
         </a>
       </div>
 
@@ -59,7 +59,7 @@ export function LatestFeed() {
       {/* Mobile view all link */}
       <div className="sm:hidden mt-12 pt-8 border-t border-brand-border flex justify-center">
         <a href="/media" className="text-brand-black text-[12px] uppercase tracking-[0.1em] font-sans flex items-center gap-2">
-          View all updates <span className="text-brand-gold text-[16px] leading-[0]">→</span>
+          View all updates <span className="text-brand-accent text-[16px] leading-[0]">→</span>
         </a>
       </div>
     </SectionWrapper>

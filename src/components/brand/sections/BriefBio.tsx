@@ -31,14 +31,14 @@ export function BriefBio({ onOpenModal }: { onOpenModal: (type: 'donation' | 'pa
           >
             <motion.span 
               variants={fadeUp} 
-              className="text-brand-gold font-sans text-label uppercase tracking-widest mb-6 block"
+              className="text-brand-accent font-sans text-label uppercase tracking-widest mb-6 block"
             >
               Public Servant & Executive Leader
             </motion.span>
             
             <motion.h2 
               variants={fadeUp} 
-              className="text-display-lg text-brand-white font-display mb-8 leading-[1.1]"
+              className="text-display-md text-brand-white font-display mb-8 leading-[1.1]"
             >
               Jokate Mwegelo
             </motion.h2>
@@ -53,7 +53,7 @@ export function BriefBio({ onOpenModal }: { onOpenModal: (type: 'donation' | 'pa
             <motion.div variants={fadeUp} className="flex flex-wrap gap-8 items-center">
               <Link 
                 href="/about" 
-                className="group inline-flex items-center gap-4 text-brand-gold hover:text-brand-white transition-colors duration-500 font-sans text-[12px] uppercase tracking-[0.2em]"
+                className="group inline-flex items-center gap-4 text-brand-accent hover:text-brand-white transition-colors duration-500 font-sans text-[12px] uppercase tracking-[0.2em]"
               >
                 Read Her Story
                 <span className="text-[16px] leading-[0] transition-transform duration-500 group-hover:translate-x-2">→</span>
@@ -61,7 +61,7 @@ export function BriefBio({ onOpenModal }: { onOpenModal: (type: 'donation' | 'pa
 
               <button 
                 onClick={() => onOpenModal('partnership')}
-                className="text-brand-white/40 hover:text-brand-gold transition-colors font-sans text-[11px] uppercase tracking-[0.2em] border-l border-brand-white/20 pl-8 h-6 flex items-center"
+                className="text-brand-white/40 hover:text-brand-accent transition-colors font-sans text-[11px] uppercase tracking-[0.2em] border-l border-brand-white/20 pl-8 h-6 flex items-center"
               >
                 Partner with us
               </button>
@@ -76,8 +76,8 @@ export function BriefBio({ onOpenModal }: { onOpenModal: (type: 'donation' | 'pa
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="relative w-full aspect-square max-w-[340px] border border-brand-gold/20 p-4">
-               <div className="absolute inset-0 border border-brand-gold/10 -m-4"></div>
+            <div className="relative w-full aspect-square max-w-[340px] border border-brand-accent/20 p-4">
+               <div className="absolute inset-0 border border-brand-accent/10 -m-4"></div>
                <div className="relative w-full h-full bg-brand-white/5 overflow-hidden">
                  <Image 
                    src="/images/jokate-black-suit.png" 

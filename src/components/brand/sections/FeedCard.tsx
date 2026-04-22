@@ -36,11 +36,11 @@ export function FeedCard({ category, headline, date, href, excerpt = 'Read more 
       
       {/* Text */}
       <div className="p-6 flex flex-col flex-grow">
-        <p className="font-sans text-label text-brand-gold uppercase tracking-widest mb-3">
+        <p className="font-sans text-label text-brand-accent uppercase tracking-widest mb-3">
           {category}
         </p>
         <Link href={href} className="focus:outline-none block mb-2">
-          <h3 className="font-display text-display-sm text-brand-black line-clamp-2 leading-[1.3] group-hover:text-brand-rose transition-colors">
+          <h3 className="font-display text-[18px] md:text-[22px] text-brand-black line-clamp-2 leading-[1.3] group-hover:text-brand-rose transition-colors">
             {headline}
           </h3>
         </Link>
@@ -50,10 +50,10 @@ export function FeedCard({ category, headline, date, href, excerpt = 'Read more 
         <div className="flex justify-between items-center mt-auto pt-4 border-t border-brand-border">
           <div className="flex items-center gap-2">
              <span className="font-sans text-label text-brand-muted">{date}</span>
-             <span className="text-brand-gold/50">·</span>
+             <span className="text-brand-accent/50">·</span>
              <span className="font-sans text-label text-brand-muted">{readTime}</span>
           </div>
-          <Link href={href} className="font-sans text-label text-brand-black group-hover:text-brand-gold transition-colors flex items-center gap-1">
+          <Link href={href} className="font-sans text-label text-brand-black group-hover:text-brand-accent transition-colors flex items-center gap-1">
             Read <span className="text-[14px] leading-[0]">→</span>
           </Link>
         </div>

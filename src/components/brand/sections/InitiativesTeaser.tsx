@@ -47,7 +47,7 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
           viewport={{ once: true }}
           className="max-w-[700px]"
         >
-          <motion.span variants={fadeUp} className="text-brand-gold font-sans text-label uppercase tracking-widest mb-6 block">
+          <motion.span variants={fadeUp} className="text-brand-accent font-sans text-label uppercase tracking-widest mb-6 block">
             Impact & Empowerment
           </motion.span>
           <motion.h2 
@@ -80,7 +80,7 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ delay: i * 0.1 }}
                  >
-                   <span className="font-sans text-label text-brand-gold uppercase tracking-widest mb-4 block opacity-80">
+                   <span className="font-sans text-label text-brand-accent uppercase tracking-widest mb-4 block opacity-80">
                      {move.category}
                    </span>
                    <h3 className="font-display text-[32px] md:text-[42px] text-brand-white leading-tight mb-4">
@@ -91,7 +91,7 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
                        {move.desc}
                      </p>
                    </div>
-                   <span className="inline-flex mt-6 text-brand-gold text-[16px] leading-[0] transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                   <span className="inline-flex mt-6 text-brand-accent text-[16px] leading-[0] transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
                      →
                    </span>
                  </motion.div>
