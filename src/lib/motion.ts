@@ -24,11 +24,11 @@ export const slideDown: Variants = {
   exit:    { opacity: 0, y: -20, transition: { duration: 0.3 } },
 }
 
-export const kenBurns = {
+export const kenBurns: Variants = {
   initial: { scale: 1.0 },
   animate: {
     scale: 1.06,
-    transition: { duration: 8, ease: 'linear', repeat: Infinity, repeatType: 'reverse' as const },
+    transition: { duration: 8, ease: 'linear', repeat: Infinity, repeatType: 'reverse' },
   },
 }
 
