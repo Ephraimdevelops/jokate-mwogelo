@@ -6,6 +6,7 @@ import { MandateCard } from '@/components/brand/sections/MandateCard'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, kenBurns, fadeIn } from '@/lib/motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Globe, Briefcase, Landmark, ShieldCheck } from 'lucide-react'
 
 export default function Leadership() {
@@ -55,7 +56,7 @@ export default function Leadership() {
       </section>
 
       {/* 2. EXPERTISE & FOUNDATION */}
-      <SectionWrapper bg="white" className="py-24 lg:py-48 border-b border-brand-border">
+      <SectionWrapper bg="white" className="py-16 lg:py-24 border-b border-brand-border">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
             <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -119,7 +120,7 @@ export default function Leadership() {
       </SectionWrapper>
 
       {/* 4. RECOGNITION & AWARDS (Clean Executive Style) */}
-      <SectionWrapper bg="white" className="py-24 lg:py-48 border-y border-brand-border">
+      <SectionWrapper bg="white" className="py-16 lg:py-24 border-y border-brand-border">
         <Container>
            <div className="text-center mb-24">
              <span className="text-brand-accent font-sans text-label uppercase tracking-widest mb-4 block">Recognition</span>
@@ -146,7 +147,7 @@ export default function Leadership() {
       </SectionWrapper>
 
       {/* 5. FINAL CALL TO ACTION */}
-      <SectionWrapper bg="black" className="py-32 lg:py-48 text-center text-brand-white">
+      <SectionWrapper bg="black" className="py-20 lg:py-32 text-center text-brand-white">
         <Container>
            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="max-w-[700px] mx-auto">
              <h2 className="text-display-lg font-display mb-8">Executive Leadership for Sustainable Development.</h2>

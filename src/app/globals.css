@@ -4,7 +4,6 @@
   /* Brand colours */
   --color-brand-black:   #0A0A0A;
   --color-brand-white:   #F8F7F4;
-  --color-brand-gold:    #C9A96E;
   --color-brand-plum:    #2D1B3D;
   --color-brand-rose:    #8B3A52;
   --color-brand-accent:  #D44A7E;
@@ -45,8 +44,8 @@
   --letter-spacing-label:        0.12em;
 
   /* Spacing */
-  --spacing-section:       120px;
-  --spacing-section-sm:    80px;
+  --spacing-section:       64px;
+  --spacing-section-sm:    48px;
   --spacing-container:     120px;
   --spacing-container-sm:  24px;
 }

@@ -1,59 +1,67 @@
-import Link from 'next/link'
-import Image from 'next/image'
+'use client'
 import { motion } from 'framer-motion'
+import { fadeUp } from '@/lib/motion'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
-export interface PressCardProps {
+interface PressCardProps {
   publication: string
   headline: string
   date: string
+  category: string
   href: string
-  thumbnailUrl?: string
+  thumbnailUrl: string
   excerpt?: string
 }
 
-export function PressCard({ publication, headline, date, href, excerpt = 'View full coverage and details on the official publication site.', thumbnailUrl }: PressCardProps) {
+export function PressCard({ publication, headline, date, category, href, thumbnailUrl, excerpt }: PressCardProps) {
   return (
-    <article className="border border-brand-border group cursor-pointer flex flex-col h-full bg-brand-white">
-      {/* Thumbnail */}
-      <Link href={href} className="block relative aspect-[3/2] overflow-hidden bg-brand-surface">
-        {thumbnailUrl ? (
-          <motion.div
-            className="absolute inset-0"
-            whileHover={{ scale: 1.04 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Image src={thumbnailUrl} alt={headline} fill className="object-cover object-top" />
-          </motion.div>
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-            <span className="font-sans text-label text-brand-muted uppercase tracking-widest">
-              {publication}
-            </span>
-          </div>
-        )}
-      </Link>
-      
-      {/* Text */}
-      <div className="p-6 flex flex-col flex-grow">
-        <p className="font-sans text-label text-brand-gold uppercase tracking-widest mb-3">
-          {publication}
-        </p>
-        <Link href={href} className="focus:outline-none block mb-2">
-          <h3 className="font-display text-display-sm text-brand-black line-clamp-2 leading-[1.3] group-hover:text-brand-rose transition-colors">
-            {headline}
-          </h3>
-        </Link>
-        <p className="font-sans text-body-sm text-brand-muted line-clamp-2 mb-6">
-          {excerpt}
-        </p>
+    <motion.div 
+      variants={fadeUp}
+      className="group flex flex-col bg-brand-white border border-brand-border overflow-hidden hover:border-brand-accent transition-all duration-500 hover:shadow-2xl"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-brand-surface">
+        <Image 
+          src={thumbnailUrl} 
+          alt={headline} 
+          fill 
+          className="object-cover group-hover:scale-105 transition-transform duration-1000" 
+        />
+        <div className="absolute top-6 left-6 flex gap-2">
+           <span className="bg-brand-black/80 backdrop-blur-md text-brand-white text-[10px] uppercase tracking-widest px-3 py-1.5 font-sans">
+             {category}
+           </span>
+        </div>
+      </div>
+
+      <div className="p-8 lg:p-10 flex flex-col flex-grow">
+        <div className="flex justify-between items-center mb-4">
+           <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-brand-accent font-bold">
+             {publication}
+           </span>
+           <span className="text-[10px] font-sans uppercase tracking-widest text-brand-muted">
+             {date}
+           </span>
+        </div>
         
-        <div className="flex justify-between items-center mt-auto pt-4 border-t border-brand-border">
-          <span className="font-sans text-label text-brand-muted">{date}</span>
-          <Link href={href} className="font-sans text-label text-brand-black group-hover:text-brand-gold transition-colors flex items-center gap-1">
-            Read <span className="text-[14px] leading-[0]">→</span>
+        <h3 className="font-display text-[22px] lg:text-[24px] text-brand-black mb-6 leading-[1.2] group-hover:text-brand-accent transition-colors duration-500">
+          {headline}
+        </h3>
+        
+        {excerpt && (
+          <p className="text-body-sm text-brand-muted font-sans leading-relaxed mb-8 line-clamp-2">
+            {excerpt}
+          </p>
+        )}
+
+        <div className="mt-auto pt-6 border-t border-brand-border">
+          <Link href={href} className="inline-flex items-center gap-2 text-brand-black text-[11px] uppercase tracking-[0.2em] font-sans group/link">
+            Read Coverage
+            <ArrowUpRight size={14} className="text-brand-accent group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-500" />
           </Link>
         </div>
       </div>
-    </article>
+    </motion.div>
   )
 }

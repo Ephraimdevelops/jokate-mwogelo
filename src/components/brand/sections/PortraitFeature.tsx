@@ -16,7 +16,7 @@ export function PortraitFeature() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent z-10" />
         <div className="absolute inset-0 flex items-end p-8 md:p-16 z-20">
           <div>
-            <p className="font-sans text-label text-brand-gold uppercase tracking-widest mb-2">
+            <p className="font-sans text-label text-brand-accent uppercase tracking-widest mb-2">
               Leadership · Focus
             </p>
             <p className="font-display text-display-sm text-brand-white">
@@ -28,7 +28,7 @@ export function PortraitFeature() {
       
       {/* Right 40%: Black Background Context */}
       <div className="w-full lg:w-[40%] h-auto lg:h-full bg-brand-black text-brand-white flex flex-col justify-center p-8 md:p-16 lg:px-24">
-         <span className="font-sans text-label text-brand-gold uppercase tracking-widest mb-6 block">
+         <span className="font-sans text-label text-brand-accent uppercase tracking-widest mb-6 block">
            Forbes 30 Under 30 · ZIFF Best Actress · UN Speaker
          </span>
          
@@ -40,7 +40,7 @@ export function PortraitFeature() {
            Her governance record in Kisarawe, Temeke, and Korogwe proves that structural efficiency and deep community resonance can coexist. She built schools where there were none, and empowered thousands.
          </p>
          
-         <Link href="/about" className="font-sans text-label text-brand-gold uppercase tracking-widest group-hover:text-brand-white transition-colors duration-300 flex items-center">
+         <Link href="/about" className="font-sans text-label text-brand-accent uppercase tracking-widest group-hover:text-brand-white transition-colors duration-300 flex items-center">
             Read her story <span className="text-[14px] leading-[0] ml-2">→</span>
          </Link>
       </div>

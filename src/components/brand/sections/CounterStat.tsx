@@ -27,7 +27,7 @@ export function CounterStat({ target, label, suffix = '' }: { target: number, la
           </span>
         )}
       </div>
-      <span className="font-sans text-[13px] text-brand-gold uppercase tracking-[0.12em]">
+      <span className="font-sans text-[13px] text-brand-accent uppercase tracking-[0.12em]">
         {label}
       </span>
     </div>

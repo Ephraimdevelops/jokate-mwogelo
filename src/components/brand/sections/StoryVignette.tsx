@@ -15,7 +15,7 @@ export function StoryVignette({ location, name, story }: VignetteProps) {
          <div className="absolute inset-0 bg-brand-black/5" />
          {/* Image would go here */}
        </div>
-       <span className="text-brand-gold font-sans text-label mb-2 block">
+       <span className="text-brand-accent font-sans text-label mb-2 block">
          From {location}
        </span>
        <h3 className="font-display text-[22px] text-brand-black mb-3 leading-[1.2]">

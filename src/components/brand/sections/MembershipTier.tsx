@@ -13,7 +13,7 @@ export function MembershipTier({ name, price, desc, benefits, cta, highlighted =
   return (
     <div className={cn(
       "flex flex-col p-8 border h-full",
-      highlighted ? "border-brand-gold bg-brand-surface" : "border-brand-border bg-brand-white"
+      highlighted ? "border-brand-accent bg-brand-surface" : "border-brand-border bg-brand-white"
     )}>
       <h3 className="text-[24px] font-display text-brand-black mb-2">{name}</h3>
       <div className="text-body-sm font-sans text-brand-muted mb-6 h-12">{desc}</div>
@@ -22,7 +22,7 @@ export function MembershipTier({ name, price, desc, benefits, cta, highlighted =
       <ul className="flex flex-col gap-4 mb-12 flex-grow">
         {benefits.map((b, i) => (
           <li key={i} className="flex items-start gap-3">
-             <span className="text-brand-gold text-[12px] pt-1">✦</span>
+             <span className="text-brand-accent text-[12px] pt-1">✦</span>
              <span className="text-body-sm font-sans text-brand-black">{b}</span>
           </li>
         ))}

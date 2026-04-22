@@ -44,9 +44,9 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="text-brand-black text-[12px] uppercase tracking-[0.1em] hover:text-brand-gold transition-colors font-sans relative group">
+              <Link key={link.name} href={link.href} className="text-brand-black text-[12px] uppercase tracking-[0.1em] hover:text-brand-accent transition-colors font-sans relative group">
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
@@ -54,7 +54,7 @@ export function Navbar() {
           <div className="flex items-center">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="font-sans text-label tracking-widest uppercase border-l border-brand-gold pl-6 ml-6 hover:text-brand-gold transition-colors duration-300 flex items-center text-brand-black"
+              className="font-sans text-label tracking-widest uppercase border-l border-brand-accent pl-6 ml-6 hover:text-brand-accent transition-colors duration-300 flex items-center text-brand-black"
             >
               Menu
             </button>

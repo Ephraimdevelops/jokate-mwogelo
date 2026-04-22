@@ -28,11 +28,11 @@ export default function Book() {
                  we create a cinematic placeholder branding.
                */}
                <div className="absolute inset-0 bg-brand-black flex flex-col items-center justify-center p-12 text-center">
-                  <span className="font-sans text-label text-brand-gold uppercase tracking-[0.3em] mb-12">Coming Soon</span>
+                  <span className="font-sans text-label text-brand-accent uppercase tracking-[0.3em] mb-12">Coming Soon</span>
                   <h2 className="font-display text-[64px] leading-tight text-brand-white mb-4">The Art of Grace.</h2>
                   <p className="font-sans text-body text-brand-muted/60 max-w-[280px]">Navigating Power and Purpose in the African Region.</p>
                   <div className="mt-auto">
-                    <span className="font-display text-display-sm text-brand-white italic underline underline-offset-8 decoration-brand-gold/30">Jokate Mwegelo.</span>
+                    <span className="font-display text-display-sm text-brand-white italic underline underline-offset-8 decoration-brand-accent/30">Jokate Mwegelo.</span>
                   </div>
                </div>
                
@@ -41,7 +41,7 @@ export default function Book() {
 
             {/* Right: Pitch & Actions */}
             <motion.div variants={m.stagger} initial="hidden" animate="visible" className="flex flex-col">
-              <motion.span variants={m.fadeUp} className="text-brand-gold font-sans text-label uppercase tracking-widest mb-6 block">
+              <motion.span variants={m.fadeUp} className="text-brand-accent font-sans text-label uppercase tracking-widest mb-6 block">
                  Executive Publication
               </motion.span>
               <motion.h1 variants={m.fadeUp} className="text-display-xl font-display text-brand-black leading-[1.0] mb-8">
@@ -82,7 +82,7 @@ export default function Book() {
               { title: 'The Strategy', desc: 'Practical frameworks for resource mobilization and community activation in rural districts.' },
               { title: 'The Legacy', desc: 'How to build systems that outlive your term, ensuring sustainable growth for women and girls.' },
             ].map((col, i) => (
-              <motion.div key={i} variants={m.fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col border-l border-brand-gold pl-8">
+              <motion.div key={i} variants={m.fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col border-l border-brand-accent pl-8">
                  <h3 className="font-display text-display-sm text-brand-black mb-4">{col.title}</h3>
                  <p className="font-sans text-body text-brand-muted leading-relaxed">{col.desc}</p>
               </motion.div>

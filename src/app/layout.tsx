@@ -94,7 +94,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased selection:bg-brand-gold/30 selection:text-brand-black">
+      <body className="antialiased selection:bg-brand-accent/30 selection:text-brand-black">
 
         <ThemeProvider
           attribute="class"

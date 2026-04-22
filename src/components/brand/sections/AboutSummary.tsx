@@ -24,12 +24,12 @@ export function AboutSummary() {
                 fill 
                 className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-brand-gold/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+              <div className="absolute inset-0 bg-brand-accent/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             </div>
             
             {/* Design Element */}
-            <div className="absolute -bottom-8 -left-8 w-48 h-48 border-[0.5px] border-brand-gold/30 -z-10" />
-            <div className="absolute -top-8 -right-8 w-48 h-48 border-[0.5px] border-brand-gold/30 -z-10" />
+            <div className="absolute -bottom-8 -left-8 w-48 h-48 border-[0.5px] border-brand-accent/30 -z-10" />
+            <div className="absolute -top-8 -right-8 w-48 h-48 border-[0.5px] border-brand-accent/30 -z-10" />
           </motion.div>
 
           <motion.div 
@@ -60,7 +60,7 @@ export function AboutSummary() {
               <p>
                 Jokate Mwegelo is a Tanzanian politician, social entrepreneur, and executive leader whose life is dedicated to the structural empowerment of the African region.
               </p>
-              <p className="border-l-2 border-brand-gold pl-8 italic font-display text-display-sm py-4">
+              <p className="border-l-2 border-brand-accent pl-8 italic font-display text-display-sm py-4">
                 &quot;The next generation will not wait for permission. We must build the doors we intend to walk through.&quot;
               </p>
               <p>

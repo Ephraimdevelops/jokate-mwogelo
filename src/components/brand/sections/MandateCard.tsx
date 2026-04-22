@@ -32,7 +32,7 @@ export function MandateCard({ era, role, org, desc, stat, statLabel, imageSide, 
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.span variants={fadeUp} className="text-brand-gold font-sans text-label uppercase tracking-widest mb-4 block">
+            <motion.span variants={fadeUp} className="text-brand-accent font-sans text-label uppercase tracking-widest mb-4 block">
               {era}
             </motion.span>
             <motion.h2 variants={fadeUp} className="text-[32px] md:text-[48px] font-display text-brand-black leading-[1.1] mb-2 uppercase">
@@ -48,7 +48,7 @@ export function MandateCard({ era, role, org, desc, stat, statLabel, imageSide, 
             
             <motion.div variants={fadeUp} className="flex flex-col relative mt-auto pt-10 border-t border-brand-border">
                <span className="text-[64px] md:text-[80px] font-display text-brand-black leading-none mb-4 block">{stat}</span>
-               <span className="text-label text-brand-gold uppercase tracking-[0.2em] font-sans">{statLabel}</span>
+               <span className="text-label text-brand-accent uppercase tracking-[0.2em] font-sans">{statLabel}</span>
             </motion.div>
           </motion.div>
         </div>

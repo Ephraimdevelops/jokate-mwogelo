@@ -75,7 +75,7 @@ export function HomeModals({ type, onClose }: HomeModalsProps) {
             {/* Right: Form */}
             <div className="md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
               <DialogHeader className="mb-8">
-                <span className="text-brand-gold text-[10px] uppercase tracking-[0.2em] mb-2 block">
+                <span className="text-brand-accent text-[10px] uppercase tracking-[0.2em] mb-2 block">
                   Engagement Protocol
                 </span>
                 <DialogTitle className="font-display text-[32px] md:text-[42px] text-brand-black leading-tight mb-4">
@@ -102,7 +102,7 @@ export function HomeModals({ type, onClose }: HomeModalsProps) {
 
                 <button 
                   type="submit" 
-                  className="w-full bg-brand-black text-brand-white py-5 px-10 font-sans text-[12px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all duration-500 shadow-xl mt-8"
+                  className="w-full bg-brand-black text-brand-white py-5 px-10 font-sans text-[12px] uppercase tracking-[0.2em] hover:bg-brand-accent transition-all duration-500 shadow-xl mt-8"
                 >
                   {active.cta}
                 </button>

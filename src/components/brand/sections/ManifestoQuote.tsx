@@ -8,7 +8,7 @@ export function ManifestoQuote() {
       <div className="flex flex-col items-center justify-center text-center relative max-w-[800px] mx-auto py-8">
         <motion.span 
           variants={fadeUp}
-          className="absolute -top-16 left-1/2 -translate-x-1/2 font-display text-[160px] text-brand-gold/15 leading-none select-none"
+          className="absolute -top-16 left-1/2 -translate-x-1/2 font-display text-[160px] text-brand-accent/15 leading-none select-none"
         >
           &ldquo;
         </motion.span>

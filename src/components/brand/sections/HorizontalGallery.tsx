@@ -58,7 +58,7 @@ export function HorizontalGallery({ images }: { images: GalleryImage[] }) {
               {img.label && (
                 <div className="absolute bottom-0 left-0 right-0 p-6 pt-24 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent pointer-events-none">
                   <p className="font-display text-display-sm text-brand-white leading-tight mb-2">{img.label}</p>
-                  <p className="font-sans text-label text-brand-gold uppercase tracking-widest">{img.category}</p>
+                  <p className="font-sans text-label text-brand-accent uppercase tracking-widest">{img.category}</p>
                 </div>
               )}
             </motion.div>
