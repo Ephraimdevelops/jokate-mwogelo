@@ -1,5 +1,5 @@
 'use client'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -9,17 +9,17 @@ export function MobileMenu({ isOpen, onClose, links }: { isOpen: boolean; onClos
   const pathname = usePathname()
 
   // Framer Motion Variants
-  const drawerVariants = {
+  const drawerVariants: Variants = {
     hidden: { x: '100%', transition: { duration: 0.4, ease: 'easeIn' } },
     visible: { x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
   }
 
-  const overlayVariants = {
+  const overlayVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.4 } }
   }
 
-  const listVariants = {
+  const listVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -27,7 +27,7 @@ export function MobileMenu({ isOpen, onClose, links }: { isOpen: boolean; onClos
     }
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
   }
