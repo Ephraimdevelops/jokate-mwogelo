@@ -45,13 +45,21 @@ export function Footer() {
              </div>
           </div>
 
-          {/* Newsletter Input */}
+          {/* The Pink Circle CTA */}
           <div className="col-span-1 flex flex-col gap-6">
-            <p className="text-[12px] uppercase tracking-[0.1em] text-brand-black">Newsletter</p>
-            <form className="flex border-b border-brand-black pb-2">
-              <input type="email" placeholder="Your email address" className="bg-transparent border-none outline-none w-full text-brand-black placeholder:text-brand-muted text-body-sm" />
-              <button type="submit" className="text-[11px] uppercase tracking-[0.1em] text-brand-black hover:text-brand-accent transition-colors shrink-0">Subscribe</button>
-            </form>
+            <p className="text-[12px] uppercase tracking-[0.1em] text-brand-black">The Pink Circle</p>
+            <div className="flex flex-col gap-4">
+              <p className="text-brand-muted text-body-sm">
+                Join our exclusive community for ambitious young women.
+              </p>
+              <Link 
+                href="/book" 
+                className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.1em] text-brand-black hover:text-brand-accent transition-colors"
+              >
+                Join the Circle 
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
           </div>
         </div>
 

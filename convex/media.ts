@@ -131,3 +131,55 @@ export const deleteMedia = mutation({
     await ctx.db.delete(args.id);
   },
 });
+
+export const getUnifiedFeed = query({
+  args: {},
+  handler: async (ctx) => {
+    const ideas = await ctx.db
+      .query("ideas")
+      .withIndex("by_status", (q) => q.eq("status", "published"))
+      .order("desc")
+      .collect();
+
+    const media = await ctx.db
+      .query("mediaEntries")
+      .order("desc")
+      .collect();
+
+    const unifiedIdeas = await Promise.all(
+      ideas.map(async (idea) => ({
+        _id: idea._id,
+        type: "reflection",
+        category: idea.category || "Reflection",
+        title: idea.title,
+        slug: idea.slug,
+        date: new Date(idea._creationTime).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+        excerpt: idea.excerpt,
+        thumbnailUrl: idea.coverImage ? await ctx.storage.getUrl(idea.coverImage) : undefined,
+        href: `/ideas/${idea.slug}`,
+      }))
+    );
+
+    const unifiedMedia = await Promise.all(
+      media.map(async (entry) => ({
+        _id: entry._id,
+        type: "media",
+        category: entry.type,
+        title: entry.title,
+        slug: entry.slug,
+        date: entry.date,
+        excerpt: entry.description,
+        thumbnailUrl: entry.thumbnailUrl || (entry.coverImage ? await ctx.storage.getUrl(entry.coverImage) : undefined),
+        href: `/media/${entry.slug}`,
+        outlet: entry.outlet,
+      }))
+    );
+
+    // Combine and sort by date (fallback to creation time if needed)
+    return [...unifiedIdeas, ...unifiedMedia].sort((a, b) => {
+        const dateA = new Date(a.date).getTime() || 0;
+        const dateB = new Date(b.date).getTime() || 0;
+        return dateB - dateA;
+    });
+  },
+});

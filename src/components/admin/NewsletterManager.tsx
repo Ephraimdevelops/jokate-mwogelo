@@ -96,8 +96,8 @@ export function NewsletterManager() {
                 
                 <Card className="border-border shadow-none">
                     <CardHeader>
-                        <CardTitle className="font-montserrat text-2xl">{editingId ? "Edit Edition" : "Compose Global Broadcast"}</CardTitle>
-                        <CardDescription>Blast email directly to all vetted subscribers via Resend.</CardDescription>
+                        <CardTitle className="font-display text-2xl uppercase tracking-widest">{editingId ? "Edit Edition" : "Compose Community Broadcast"}</CardTitle>
+                        <CardDescription className="font-sans text-[10px] uppercase tracking-widest text-brand-muted">Blast email directly to all vetted members of the Pink Circle Community.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <div className="space-y-2">
@@ -132,47 +132,47 @@ export function NewsletterManager() {
     }
 
     return (
-        <div className="space-y-8 p-8 max-w-6xl mx-auto font-sans">
-            <div className="flex justify-between items-end">
-                <div className="space-y-1">
-                    <h2 className="text-4xl font-cormorant italic font-medium">The Mavura Letter</h2>
-                    <p className="text-muted-foreground text-sm uppercase tracking-widest font-bold">Campaign & Audience Intelligence</p>
+        <div className="space-y-12 p-8 max-w-6xl mx-auto font-sans">
+            <div className="flex justify-between items-end border-b border-brand-border pb-10">
+                <div className="space-y-2">
+                    <h2 className="text-4xl font-display font-bold uppercase tracking-[0.1em] text-brand-black">Pink Circle Community</h2>
+                    <p className="text-brand-muted text-[10px] uppercase tracking-[0.3em] font-bold">Campaign & Audience Intelligence Node</p>
                 </div>
-                <Button className="bg-accent text-primary hover:bg-accent/90 gap-2 h-12 px-6 font-bold uppercase shadow-lg shadow-accent/20" onClick={() => setIsComposing(true)}>
+                <Button className="bg-brand-black text-brand-white hover:bg-brand-accent gap-3 h-14 px-8 font-bold uppercase text-[10px] tracking-widest transition-all duration-500 shadow-2xl" onClick={() => setIsComposing(true)}>
                     <Plus className="w-4 h-4" /> New Edition
                 </Button>
             </div>
 
             {/* Stats Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="border-border/40 bg-card/50 shadow-none">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="border-brand-border bg-brand-white shadow-sm">
                     <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                        <CardTitle className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Active Subscribers</CardTitle>
-                        <Users className="w-4 h-4 text-accent" />
+                        <CardTitle className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-muted">Active Members</CardTitle>
+                        <Users className="w-4 h-4 text-brand-accent" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-cormorant font-bold">{stats?.active || 0}</div>
-                        <p className="text-[10px] text-muted-foreground mt-1 uppercase font-bold">Vetted global leaders</p>
+                        <div className="text-4xl font-display font-bold text-brand-black tracking-tight">{stats?.active || 0}</div>
+                        <p className="text-[9px] text-brand-muted mt-2 uppercase font-bold tracking-widest">Vetted global leaders</p>
                     </CardContent>
                 </Card>
-                <Card className="border-border/40 bg-card/50 shadow-none">
+                <Card className="border-brand-border bg-brand-white shadow-sm">
                     <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                        <CardTitle className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Open Rate (Avg)</CardTitle>
-                        <BarChart2 className="w-4 h-4 text-accent" />
+                        <CardTitle className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-muted">Engagement Rate</CardTitle>
+                        <BarChart2 className="w-4 h-4 text-brand-accent" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-cormorant font-bold">64.2%</div>
-                        <p className="text-[10px] text-muted-foreground mt-1 uppercase font-bold">+2.4% from last month</p>
+                        <div className="text-4xl font-display font-bold text-brand-black tracking-tight">64.2%</div>
+                        <p className="text-[9px] text-brand-muted mt-2 uppercase font-bold tracking-widest">+2.4% from last month</p>
                     </CardContent>
                 </Card>
-                <Card className="border-border/40 bg-card/50 shadow-none">
+                <Card className="border-brand-border bg-brand-white shadow-sm">
                     <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-                        <CardTitle className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Recent Activity</CardTitle>
-                        <Send className="w-4 h-4 text-accent" />
+                        <CardTitle className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-muted">Recent Influx</CardTitle>
+                        <Send className="w-4 h-4 text-brand-accent" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-3xl font-cormorant font-bold">12</div>
-                        <p className="text-[10px] text-muted-foreground mt-1 uppercase font-bold">New signups this week</p>
+                        <div className="text-4xl font-display font-bold text-brand-black tracking-tight">12</div>
+                        <p className="text-[9px] text-brand-muted mt-2 uppercase font-bold tracking-widest">New members this week</p>
                     </CardContent>
                 </Card>
             </div>

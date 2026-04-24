@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RichTextEditor } from "@/components/admin/RichTextEditor";
 import { ImageUpload } from "@/components/admin/ImageUpload";
-import { FileText, Plus, ArrowLeft, Trash2, Globe } from "lucide-react";
+import { FileText, Plus, ArrowLeft, Trash2, Globe, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function IdeasManager() {
@@ -95,7 +95,8 @@ export function IdeasManager() {
                 
                 <Card className="border-border shadow-none">
                     <CardHeader>
-                        <CardTitle className="font-montserrat text-2xl">{editingId ? "Edit Reflection" : "Pen an Idea"}</CardTitle>
+                        <CardTitle className="font-display text-2xl uppercase tracking-widest">{editingId ? "Edit Reflection" : "Pen a Reflection"}</CardTitle>
+                        <CardDescription className="font-sans text-[10px] uppercase tracking-widest text-brand-muted">Compose your intellectual and diplomatic contributions.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <div className="space-y-2">
@@ -152,13 +153,13 @@ export function IdeasManager() {
 
     return (
         <Card className="border-border shadow-none max-w-6xl mx-auto">
-            <CardHeader className="flex flex-row items-center justify-between pb-6 border-b border-border/50">
+            <CardHeader className="flex flex-row items-center justify-between pb-8 border-b border-brand-border/50">
                 <div>
-                    <CardTitle className="font-montserrat text-2xl">Reflections Archive</CardTitle>
-                    <CardDescription className="font-sans">Draft and publish intellectual contributions and diplomatic papers.</CardDescription>
+                    <CardTitle className="font-display text-2xl uppercase tracking-widest text-brand-black">Reflections Archive</CardTitle>
+                    <CardDescription className="font-sans text-[11px] uppercase tracking-widest text-brand-muted mt-1">Manage public intellectual discourse and diplomatic essays.</CardDescription>
                 </div>
-                <Button className="bg-accent text-primary uppercase font-bold text-xs" onClick={() => setIsComposing(true)}>
-                    <Plus className="w-4 h-4 mr-2" /> New Entry
+                <Button className="bg-brand-black text-brand-white uppercase font-bold text-[10px] tracking-widest h-12 px-8 hover:bg-brand-accent transition-all duration-500 shadow-xl" onClick={() => setIsComposing(true)}>
+                    <Plus className="w-4 h-4 mr-2" /> New Reflection
                 </Button>
             </CardHeader>
             <CardContent className="pt-6">

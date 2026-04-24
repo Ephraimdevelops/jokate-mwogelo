@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
 
   // Protect all /admin routes
   if (pathname.startsWith('/admin')) {
-    const session = request.cookies.get('mavura_admin_session')?.value;
+    const session = request.cookies.get('jokate_admin_session')?.value;
     
     // Verify session - in production this would be more robust
     // but for our requirements, a secret shared between env and cookie is reliable.

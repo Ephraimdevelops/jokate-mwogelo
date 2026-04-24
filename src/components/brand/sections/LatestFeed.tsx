@@ -3,37 +3,13 @@ import { FeedCard } from './FeedCard'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger } from '@/lib/motion'
 
-const mockFeeds = [
-  {
-    id: 1,
-    category: 'Interview',
-    headline: 'Governance, Grace, and the Global Mandate.',
-    date: 'Oct 24, 2025',
-    href: '/media/governance-interview',
-    thumbnailUrl: '/images/jokate-black-suit.png',
-    excerpt: 'An exclusive sit-down on the structural requirements for leadership in the next decade, and the role of administrative precision in achieving community impact.'
-  },
-  {
-    id: 2,
-    category: 'Appearance',
-    headline: 'Jokate Mwegelo addresses the UN CSW69 in New York.',
-    date: 'Sep 28, 2025',
-    href: '/media/un-csw69-address',
-    thumbnailUrl: '/images/jokate-white-suit.png',
-    excerpt: 'Delivering the keynote on youth inclusion and structural economic empowerment at the United Nations Commission on the Status of Women.'
-  },
-  {
-    id: 3,
-    category: 'Feature',
-    headline: 'Building the Doors: The 2025 Empowerment Strategy.',
-    date: 'Aug 14, 2025',
-    href: '/initiatives/empowerment-strategy',
-    thumbnailUrl: '/images/jokate-rally.jpg',
-    excerpt: 'A comprehensive deep-dive into the upcoming non-profit structure and the national pipeline for female leadership across the region.'
-  }
-]
+import { useQuery } from 'convex/react'
+import { api } from '../../../../convex/_generated/api'
 
 export function LatestFeed() {
+  const feed = useQuery(api.media.getUnifiedFeed) || []
+  const latestItems = feed.slice(0, 3)
+
   return (
     <SectionWrapper bg="white">
       <div className="flex justify-between items-end mb-16">
@@ -49,12 +25,25 @@ export function LatestFeed() {
         variants={stagger}
         className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16"
       >
-        {mockFeeds.map((feed) => (
-          <motion.div key={feed.id} variants={fadeUp}>
-            <FeedCard {...feed} />
+        {latestItems.map((item) => (
+          <motion.div key={item._id} variants={fadeUp}>
+            <FeedCard 
+              category={item.category}
+              headline={item.title}
+              date={item.date}
+              href={item.href}
+              thumbnailUrl={item.thumbnailUrl || '/images/jokate-black-suit.png'}
+              excerpt={item.excerpt}
+            />
           </motion.div>
         ))}
       </motion.div>
+      
+      {feed.length === 0 && (
+        <div className="py-20 text-center text-brand-muted uppercase tracking-widest text-[11px]">
+          Waiting for latest updates...
+        </div>
+      )}
       
       {/* Mobile view all link */}
       <div className="sm:hidden mt-12 pt-8 border-t border-brand-border flex justify-center">

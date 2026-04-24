@@ -14,42 +14,47 @@ export default function AdminLayout({
     const pathname = usePathname();
 
     const navigation = [
-        { name: 'Overview', href: '/admin', icon: LayoutDashboard },
-        { name: 'Ideas & Policy', href: '/admin/ideas', icon: FileText },
-        { name: 'Media & Influence', href: '/admin/media', icon: Bookmark },
+        { name: 'Executive Overview', href: '/admin', icon: LayoutDashboard },
+        { name: 'Blogs & Reflections', href: '/admin/ideas', icon: FileText },
+        { name: 'Media Archive', href: '/admin/media', icon: Bookmark },
         { name: 'The Library', href: '/admin/books', icon: BookOpen },
         { name: 'Milestones', href: '/admin/milestones', icon: Award },
-        { name: 'The Letter', href: '/admin/newsletter', icon: Mail },
-        { name: 'Inquiries', href: '/admin/inquiries', icon: MessageSquare },
-        { name: 'Press Kit', href: '/admin/media-kit', icon: FolderArchive },
+        { name: 'Pink Circle Community', href: '/admin/newsletter', icon: Mail },
+        { name: 'Public Inquiries', href: '/admin/inquiries', icon: MessageSquare },
+        { name: 'Media Kit', href: '/admin/media-kit', icon: FolderArchive },
     ];
 
 
     return (
-        <div className="flex h-screen bg-[#F8F9FA] text-foreground transition-colors duration-300 overflow-hidden font-sans">
+        <div className="flex h-screen bg-[#FAFAFA] text-foreground transition-colors duration-300 overflow-hidden font-sans">
             {/* Sidebar Navigation */}
-            <aside className="w-64 border-r border-border bg-white flex flex-col justify-between hidden md:flex flex-shrink-0">
+            <aside className="w-72 border-r border-brand-border bg-brand-white flex flex-col justify-between hidden md:flex flex-shrink-0">
                 <div>
-                    <div className="h-20 flex items-center px-6 border-b border-border">
-                        <Link href="/admin" className="flex items-center gap-3">
-                            <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-lg font-cormorant">
-                                TM
+                    <div className="h-24 flex items-center px-8 border-b border-brand-border">
+                        <Link href="/admin" className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-brand-black flex items-center justify-center text-brand-white font-display text-lg tracking-widest">
+                                JM
                             </div>
-                            <span className="text-xl font-medium tracking-tight font-cormorant text-slate-900">
-                                Ambassador's Desk
-                            </span>
+                            <div className="flex flex-col">
+                                <span className="text-sm font-display font-bold tracking-[0.2em] text-brand-black leading-none uppercase">
+                                    Command
+                                </span>
+                                <span className="text-[10px] font-sans text-brand-accent tracking-[0.3em] uppercase mt-1">
+                                    Centre
+                                </span>
+                            </div>
                         </Link>
                     </div>
 
-                    <nav className="p-4 space-y-1">
-                        <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest px-2 mb-4 mt-4">Content Authority</div>
+                    <nav className="p-6 space-y-2">
+                        <div className="text-[10px] font-bold text-brand-muted uppercase tracking-[0.2em] px-2 mb-6 mt-4">Content Repository</div>
                         {navigation.map((item) => {
                             const isActive = pathname === item.href;
                             const Icon = item.icon;
                             return (
                                 <Link key={item.name} href={item.href}>
-                                    <span className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${isActive ? 'bg-accent/10 text-accent' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}>
-                                        <Icon className={`w-4 h-4 ${isActive ? 'text-accent' : 'text-slate-400'}`} />
+                                    <span className={`flex items-center gap-4 px-4 py-3 text-[11px] font-bold uppercase tracking-widest transition-all duration-300 ${isActive ? 'bg-brand-black text-brand-white shadow-xl translate-x-2' : 'text-brand-muted hover:text-brand-black hover:translate-x-1'}`}>
+                                        <Icon className={`w-4 h-4 ${isActive ? 'text-brand-accent' : 'text-brand-muted'}`} />
                                         {item.name}
                                     </span>
                                 </Link>
@@ -58,45 +63,45 @@ export default function AdminLayout({
                     </nav>
                 </div>
 
-                <div className="p-4 border-t border-border bg-slate-50">
-                    <div className="flex items-center gap-3 px-2 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
-                            <img src="/images/portraits/ambassador-profile.jpg" alt="Admin User" className="w-full h-full object-cover" />
+                <div className="p-6 border-t border-brand-border bg-brand-surface">
+                    <div className="flex items-center gap-4 px-2 mb-6">
+                        <div className="w-12 h-12 rounded-full bg-brand-black border-2 border-brand-accent/20 overflow-hidden relative">
+                            <img src="/images/jokate-black-suit.png" alt="Admin User" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-sm font-bold text-slate-900 leading-tight">Admin Console</span>
-                            <span className="text-[10px] text-muted-foreground uppercase tracking-widest">Bureau Access</span>
+                            <span className="text-[11px] font-bold text-brand-black leading-tight uppercase tracking-wider">JM Office</span>
+                            <span className="text-[9px] text-brand-accent font-bold uppercase tracking-[0.2em] mt-1">Executive Access</span>
                         </div>
                     </div>
-                    <Button variant="ghost" className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10 text-xs font-bold uppercase tracking-widest h-10">
+                    <Button variant="ghost" className="w-full justify-start text-brand-muted hover:text-brand-rose hover:bg-brand-rose/5 text-[10px] font-bold uppercase tracking-[0.2em] h-12 border border-transparent hover:border-brand-rose/20 transition-all duration-300">
                         <LogOut className="w-4 h-4 mr-3" />
-                        Secure Sign Out
+                        Terminate Session
                     </Button>
                 </div>
             </aside>
 
             {/* Mobile Header (Fallback) */}
             <div className="md:hidden flex flex-col w-full h-full">
-                <header className="border-b border-border bg-white sticky top-0 z-50">
-                    <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                        <Link href="/admin" className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-lg font-cormorant">
-                                TM
+                <header className="border-b border-brand-border bg-brand-white sticky top-0 z-50">
+                    <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+                        <Link href="/admin" className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-brand-black flex items-center justify-center text-brand-white font-display text-sm tracking-widest">
+                                JM
                             </div>
-                            <span className="text-xl font-bold tracking-tight font-cormorant">
-                                Ambassador's Desk
+                            <span className="text-sm font-display font-bold tracking-[0.2em] uppercase">
+                                Command Centre
                             </span>
                         </Link>
                     </div>
                 </header>
-                <main className="flex-1 overflow-y-auto w-full p-4">
+                <main className="flex-1 overflow-y-auto w-full p-6">
                     {children}
                 </main>
             </div>
 
             {/* Main Content (Desktop) */}
-            <main className="flex-1 overflow-y-auto w-full hidden md:block">
-                <div className="max-w-6xl mx-auto p-8 lg:p-12">
+            <main className="flex-1 overflow-y-auto w-full hidden md:block bg-brand-surface/30">
+                <div className="max-w-6xl mx-auto p-12 lg:p-16">
                     {children}
                 </div>
             </main>

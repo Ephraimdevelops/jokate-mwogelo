@@ -10,15 +10,12 @@ import * as m from '@/lib/motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const mockPressItems = [
-  { _id: '1', publication: 'Forbes Africa', headline: '30 Under 30 defining the continent.', date: 'NOV 2017', category: 'award', href: '#', thumbnailUrl: '/images/jokate-brown-suit-full.jpg' },
-  { _id: '2', publication: 'UN Women', headline: 'Secretary General addresses CSW69.', date: 'MAR 2025', category: 'speaking', href: '#', thumbnailUrl: '/images/jokate-white-suit.png' },
-  { _id: '3', publication: 'The Citizen', headline: 'The Rise of Jokate Urban Mwegelo.', date: 'FEB 2023', category: 'interview', href: '#', thumbnailUrl: '/images/jokate-black-suit.png' },
-  { _id: '4', publication: 'Avance Media', headline: '100 Most Influential Young Africans.', date: 'SEP 2020', category: 'award', href: '#', thumbnailUrl: '/images/jokate-rally.jpg' },
-  { _id: '5', publication: 'Daily News', headline: '"The next generation will not wait."', date: 'AUG 2024', category: 'interview', href: '#', thumbnailUrl: '/images/jokate-brown-suit-half.jpg' }
-]
+import { useQuery } from 'convex/react'
+import { api } from '../../../convex/_generated/api'
 
 export default function Media() {
+  const feed = useQuery(api.media.getUnifiedFeed) || []
+
   return (
     <PageTransition>
       {/* 1. CINEMATIC EVENT HERO */}
@@ -52,19 +49,19 @@ export default function Media() {
          <Tabs defaultValue="all" className="w-full flex flex-col">
             <div className="flex justify-center mb-12 overflow-x-auto no-scrollbar">
               <TabsList className="bg-transparent border-b border-brand-border rounded-none h-auto p-0 flex gap-8 md:gap-12">
-                {['all', 'award', 'interview', 'speaking'].map(cat => (
+                {['all', 'award', 'interview', 'speaking', 'reflection'].map(cat => (
                   <TabsTrigger 
                     key={cat} 
                     value={cat}
                     className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:text-brand-black data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-brand-accent text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-brand-muted pb-4 transition-all"
                   >
-                    {cat === 'all' ? 'All Coverage' : cat + 's'}
+                    {cat === 'all' ? 'All Coverage' : cat === 'reflection' ? 'Reflections' : cat + 's'}
                   </TabsTrigger>
                 ))}
               </TabsList>
             </div>
             
-            {['all', 'award', 'interview', 'speaking'].map(cat => (
+            {['all', 'award', 'interview', 'speaking', 'reflection'].map(cat => (
               <TabsContent key={cat} value={cat} className="mt-0 outline-none">
                 <motion.div 
                   variants={m.stagger} 
@@ -72,13 +69,27 @@ export default function Media() {
                   animate="visible" 
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
                 >
-                  {mockPressItems
-                     .filter(item => cat === 'all' || item.category === cat)
+                  {feed
+                     .filter(item => cat === 'all' || item.category.toLowerCase() === cat.toLowerCase() || (cat === 'reflection' && item.type === 'reflection'))
                      .map(item => (
                     <motion.div key={item._id} variants={m.fadeUp}>
-                      <PressCard {...item} excerpt="Detailed press coverage highlighting the impact of governance and public advocacy." />
+                      <PressCard 
+                        publication={item.type === 'media' ? (item as any).outlet : 'Reflections'}
+                        headline={item.title}
+                        date={item.date}
+                        category={item.category}
+                        href={item.href}
+                        thumbnailUrl={item.thumbnailUrl || '/images/jokate-black-suit.png'}
+                        excerpt={item.excerpt}
+                      />
                     </motion.div>
                   ))}
+                  
+                  {feed.length === 0 && (
+                    <div className="col-span-full py-20 text-center text-brand-muted uppercase tracking-widest text-[11px]">
+                      No content found in this category.
+                    </div>
+                  )}
                 </motion.div>
               </TabsContent>
             ))}

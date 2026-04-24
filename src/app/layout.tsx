@@ -9,7 +9,6 @@ import { Toaster } from "sonner";
 
 import { Navbar } from "@/components/brand/navigation/Navbar";
 import { Footer } from "@/components/brand/layout/Footer";
-import { CommunityBar } from "@/components/brand/layout/CommunityBar";
 
 
 export const metadata: Metadata = {
@@ -107,7 +106,6 @@ export default function RootLayout({
             <main className="min-h-screen pt-24 flex flex-col">
               {children}
             </main>
-            <CommunityBar />
             <Footer />
             <ResidentAssistant />
             <Toaster position="top-center" richColors />

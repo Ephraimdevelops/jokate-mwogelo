@@ -27,7 +27,7 @@ export function BooksManager() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [content, setContent] = useState("");
-    const [author, setAuthor] = useState("Togolani Mavura");
+    const [author, setAuthor] = useState("Jokate Mwegelo");
     const [coverImage, setCoverImage] = useState("");
     const [purchaseLabel, setPurchaseLabel] = useState("");
     const [purchaseUrl, setPurchaseUrl] = useState("");
@@ -39,7 +39,7 @@ export function BooksManager() {
         setTitle(book.title);
         setDescription(book.description);
         setContent(book.content || "");
-        setAuthor(book.author || "Togolani Mavura");
+        setAuthor(book.author || "Jokate Mwegelo");
         setCoverImage(book.coverImage || "");
         setPurchaseLabel(book.purchaseLinks?.[0]?.label || "");
         setPurchaseUrl(book.purchaseLinks?.[0]?.url || "");
@@ -93,7 +93,7 @@ export function BooksManager() {
 
     const resetForm = () => {
         setEditingId(null);
-        setTitle(""); setDescription(""); setContent(""); setAuthor("Togolani Mavura"); setCoverImage("");
+        setTitle(""); setDescription(""); setContent("");        setAuthor("Jokate Mwegelo"); setCoverImage("");
         setPurchaseLabel(""); setPurchaseUrl(""); setIsFeatured(false);
     };
 
@@ -117,7 +117,7 @@ export function BooksManager() {
                             </div>
                             <div className="space-y-2">
                                 <Label className="uppercase text-xs font-bold text-muted-foreground">Author</Label>
-                                <Input value={author} onChange={e => setAuthor(e.target.value)} placeholder="Togolani Mavura" />
+                                <Input value={author} onChange={e => setAuthor(e.target.value)} placeholder="Jokate Mwegelo" />
                             </div>
                         </div>
 
@@ -175,13 +175,13 @@ export function BooksManager() {
 
     return (
         <Card className="border-border shadow-none max-w-6xl mx-auto">
-            <CardHeader className="flex flex-row items-center justify-between pb-6 border-b border-border/50">
+            <CardHeader className="flex flex-row items-center justify-between pb-8 border-b border-brand-border/50">
                 <div>
-                    <CardTitle className="font-montserrat text-2xl">The Library</CardTitle>
-                    <CardDescription className="font-sans">Manage published books and intellectual contributions.</CardDescription>
+                    <CardTitle className="font-display text-2xl uppercase tracking-widest text-brand-black">The Book Archive</CardTitle>
+                    <CardDescription className="font-sans text-[11px] uppercase tracking-widest text-brand-muted mt-1">Manage published works and intellectual monographs.</CardDescription>
                 </div>
-                <Button className="bg-accent text-primary uppercase font-bold text-xs" onClick={() => setIsComposing(true)}>
-                    <Plus className="w-4 h-4 mr-2" /> Add Book
+                <Button className="bg-brand-black text-brand-white uppercase font-bold text-[10px] tracking-widest h-12 px-8 hover:bg-brand-accent transition-all duration-500 shadow-xl" onClick={() => setIsComposing(true)}>
+                    <Plus className="w-4 h-4 mr-2" /> Register Publication
                 </Button>
             </CardHeader>
             <CardContent className="pt-6">

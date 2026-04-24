@@ -90,8 +90,8 @@ export const createIdea = mutation({
     let user = await ctx.db.query("users").first();
     if (!user) {
       const userId = await ctx.db.insert("users", {
-        name: "Togolani Mavura",
-        email: "admin@togolanimavura.com",
+        name: "Jokate Mwegelo",
+        email: "admin@jokatemwegelo.com",
         role: "super_admin",
       });
       user = await ctx.db.get(userId);

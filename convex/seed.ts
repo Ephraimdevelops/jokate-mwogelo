@@ -65,6 +65,58 @@ export const seedDatabase = mutation({
       isFeatured: true
     });
 
-    return "Database seeded successfully";
+    // 5. Seed Demo Reflections
+    const demoIdeas = [
+      {
+        title: "The Architecture of Karama: Leading with Dignity",
+        slug: "architecture-of-karama",
+        excerpt: "Exploring the intersection of tradition, modern leadership, and the preservation of human dignity in public service.",
+        content: "<p>Dignity is not merely a personal trait; it is the foundation of any enduring leadership. In my years of public service, I have seen how the architecture of 'Karama' (Dignity) shapes the way we interact with our communities...</p>",
+        category: "Leadership",
+        tags: ["Leadership", "Values"],
+        status: "published" as const,
+        isFeatured: true,
+      },
+      {
+        title: "Diplomacy in Action: Building Bridges Across Borders",
+        slug: "diplomacy-in-action",
+        excerpt: "Reflections on the role of cultural exchange and strategic communication in modern international relations.",
+        content: "<p>International relations today require more than just official protocols. They require a deep understanding of human connection and cultural resonance...</p>",
+        category: "Diplomacy",
+        tags: ["Diplomacy", "Reflections"],
+        status: "published" as const,
+        isFeatured: false,
+      },
+      {
+        title: "Empowering the Next Generation of Women Leaders",
+        slug: "empowering-women-leaders",
+        excerpt: "A call to action for young women to step into leadership roles and redefine the future of our continent.",
+        content: "<p>The future of Africa depends on the inclusion of its daughters. When we empower women, we empower entire nations. My journey has taught me that no space is off-limits...</p>",
+        category: "Empowerment",
+        tags: ["Women", "Impact"],
+        status: "published" as const,
+        isFeatured: true,
+      }
+    ];
+
+    let user = await ctx.db.query("users").first();
+    if (!user) {
+      const userId = await ctx.db.insert("users", {
+        name: "Jokate Mwegelo",
+        email: "admin@jokatemwegelo.com",
+        role: "super_admin",
+      });
+      user = await ctx.db.get(userId);
+    }
+
+    for (const idea of demoIdeas) {
+      await ctx.db.insert("ideas", {
+        ...idea,
+        authorId: user!._id,
+        publishedAt: Date.now(),
+      });
+    }
+
+    return "Database seeded successfully with demo posts";
   }
 });

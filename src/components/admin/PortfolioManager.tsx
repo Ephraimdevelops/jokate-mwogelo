@@ -35,7 +35,7 @@ export function PortfolioManager() {
     const [date, setDate] = useState("");
     const [description, setDescription] = useState("");
     const [content, setContent] = useState(""); // rich text
-    const [author, setAuthor] = useState("Togolani Mavura");
+    const [author, setAuthor] = useState("Jokate Mwegelo");
     const [type, setType] = useState<"interview" | "press" | "academic" | "other">("press");
     const [externalLink, setExternalLink] = useState("");
     const [mediaUrl, setMediaUrl] = useState("");
@@ -49,7 +49,7 @@ export function PortfolioManager() {
         setDate(item.date);
         setDescription(item.description);
         setContent(item.content || "");
-        setAuthor(item.author || "Togolani Mavura");
+        setAuthor(item.author || "Jokate Mwegelo");
         setType(item.type);
         setExternalLink(item.externalLink || "");
         setMediaUrl(item.mediaUrl || "");
@@ -98,7 +98,7 @@ export function PortfolioManager() {
 
     const resetForm = () => {
         setEditingId(null);
-        setTitle(""); setOutlet(""); setDate(""); setDescription(""); setAuthor("Togolani Mavura"); setExternalLink(""); setCoverImage(""); setMediaUrl(""); setContent(""); setIsFeatured(false);
+        setTitle(""); setOutlet(""); setDate(""); setDescription(""); setAuthor("Jokate Mwegelo"); setExternalLink(""); setCoverImage(""); setMediaUrl(""); setContent(""); setIsFeatured(false);
     }
 
     if (isComposing) {
@@ -110,7 +110,8 @@ export function PortfolioManager() {
                 
                 <Card className="border-border shadow-none">
                     <CardHeader>
-                        <CardTitle className="font-montserrat text-2xl">{editingId ? "Edit Media Entry" : "Log Media or Appearance"}</CardTitle>
+                        <CardTitle className="font-display text-2xl uppercase tracking-widest">{editingId ? "Edit Media Entry" : "Record Media Presence"}</CardTitle>
+                        <CardDescription className="font-sans text-[10px] uppercase tracking-widest text-brand-muted">Document press coverage, appearances, and global addresses.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
@@ -197,12 +198,12 @@ export function PortfolioManager() {
 
     return (
         <Card className="border-border shadow-none">
-            <CardHeader className="flex flex-row items-center justify-between pb-6 border-b border-border/50">
+            <CardHeader className="flex flex-row items-center justify-between pb-8 border-b border-brand-border/50">
                 <div>
-                     <CardTitle className="font-montserrat text-2xl">The Statesman's Portfolio</CardTitle>
-                     <CardDescription className="font-sans">Manage economic advocacy items, global speeches, and media appearances. ⭐ = Featured on homepage.</CardDescription>
+                     <CardTitle className="font-display text-2xl uppercase tracking-widest text-brand-black">Media & Influence Repository</CardTitle>
+                     <CardDescription className="font-sans text-[11px] uppercase tracking-widest text-brand-muted mt-1">Manage institutional press, global speeches, and media appearances. ⭐ = Featured.</CardDescription>
                 </div>
-                 <Button className="bg-accent text-primary uppercase font-bold text-xs" onClick={() => setIsComposing(true)}>
+                 <Button className="bg-brand-black text-brand-white uppercase font-bold text-[10px] tracking-widest h-12 px-8 hover:bg-brand-accent transition-all duration-500 shadow-xl" onClick={() => setIsComposing(true)}>
                     <Plus className="w-4 h-4 mr-2" /> Log Appearance
                 </Button>
             </CardHeader>

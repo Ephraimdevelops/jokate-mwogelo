@@ -9,7 +9,7 @@ export async function loginAction(prevState: any, formData: FormData) {
 
   if (password === process.env.ADMIN_PASSWORD) {
     const cookieStore = await cookies();
-    cookieStore.set('mavura_admin_session', process.env.ADMIN_SESSION_SECRET as string, {
+    cookieStore.set('jokate_admin_session', process.env.ADMIN_SESSION_SECRET as string, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
