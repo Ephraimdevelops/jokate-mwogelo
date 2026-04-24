@@ -3,6 +3,7 @@ import { SectionWrapper } from '../layout/SectionWrapper'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger } from '@/lib/motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { CheckCircle2, Sparkles } from 'lucide-react'
 
 export function NewsletterCta() {
