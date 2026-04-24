@@ -61,7 +61,7 @@ export default function MediaDetail() {
                <div className="flex items-center gap-2 text-brand-muted text-[11px] font-sans uppercase tracking-widest">
                  <Calendar size={12} /> {displayDate}
                  <span className="mx-2">·</span>
-                 <Clock size={12} /> {post.readTime || '4 min read'}
+                 <Clock size={12} /> {(post as any).readTime || '4 min read'}
                </div>
              </div>
 
