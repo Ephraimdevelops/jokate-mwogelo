@@ -11,7 +11,7 @@ const navLinks = [
   { name: 'Impact', href: '/impact' },
   { name: 'Initiatives', href: '/initiatives' },
   { name: 'Media', href: '/media' },
-  { name: 'Book', href: '/book' },
+  { name: 'Community', href: '/community' },
   { name: 'Partner', href: '/partner' },
   { name: 'Contact', href: '/contact' },
 ]

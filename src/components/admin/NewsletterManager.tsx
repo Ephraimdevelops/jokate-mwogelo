@@ -97,7 +97,7 @@ export function NewsletterManager() {
                 <Card className="border-border shadow-none">
                     <CardHeader>
                         <CardTitle className="font-display text-2xl uppercase tracking-widest">{editingId ? "Edit Edition" : "Compose Community Broadcast"}</CardTitle>
-                        <CardDescription className="font-sans text-[10px] uppercase tracking-widest text-brand-muted">Blast email directly to all vetted members of the Pink Circle Community.</CardDescription>
+                        <CardDescription className="font-sans text-[10px] uppercase tracking-widest text-brand-muted">Blast email directly to all vetted members of the Nguvu Circle Community.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <div className="space-y-2">

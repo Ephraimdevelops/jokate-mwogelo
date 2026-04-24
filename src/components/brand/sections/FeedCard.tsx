@@ -52,7 +52,7 @@ export function FeedCard({ category, headline, date, href, excerpt = 'Read more 
         </div>
 
         <Link href={href} className="focus:outline-none block mb-4">
-          <h3 className="font-display text-[13px] lg:text-[14px] text-brand-black line-clamp-2 leading-[1.4] group-hover:text-brand-accent transition-colors duration-500 uppercase tracking-wider">
+          <h3 className="font-display text-[11px] lg:text-[12px] text-brand-black line-clamp-2 leading-[1.5] group-hover:text-brand-accent transition-colors duration-500 uppercase tracking-[0.15em]">
             {headline}
           </h3>
         </Link>

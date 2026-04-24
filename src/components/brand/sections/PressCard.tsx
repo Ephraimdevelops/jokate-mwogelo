@@ -45,7 +45,7 @@ export function PressCard({ publication, headline, date, category, href, thumbna
            </span>
         </div>
         
-        <h3 className="font-display text-[15px] lg:text-[16px] text-brand-black mb-6 leading-[1.3] group-hover:text-brand-accent transition-colors duration-500">
+        <h3 className="font-display text-[13px] lg:text-[14px] text-brand-black mb-6 leading-[1.4] group-hover:text-brand-accent transition-colors duration-500">
           {headline}
         </h3>
         

@@ -86,7 +86,7 @@ export function HeroSlider() {
           >
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-brand-white/5 to-brand-white/30 z-10" />
             <Image
-              src="/images/jokate-white-suit-2.png"
+              src="/images/jokate-brown-suit-half.jpg"
               alt="Hon. Jokate Mwegelo"
               fill
               className="object-cover object-top"

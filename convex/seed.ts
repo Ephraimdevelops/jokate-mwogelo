@@ -117,6 +117,38 @@ export const seedDatabase = mutation({
       });
     }
 
-    return "Database seeded successfully with demo posts";
+    // 6. Seed Initial Mentors
+    const initialMentors = [
+      {
+        name: "Dr. Tulia Ackson",
+        title: "Speaker of the National Assembly",
+        organization: "United Republic of Tanzania",
+        sector: "Governance",
+        bio: "Champion of legislative excellence and women's political empowerment.",
+        isFeatured: true,
+      },
+      {
+        name: "Faraja Nyalandu",
+        title: "Founder & Executive Director",
+        organization: "Shule Direct",
+        sector: "Education Technology",
+        bio: "Leading the digital transformation of education in East Africa.",
+        isFeatured: true,
+      },
+      {
+        name: "Jennifer Bash",
+        title: "CEO",
+        organization: "Alaska Tanzania",
+        sector: "Agribusiness",
+        bio: "Strategic leader in food security and value-chain development.",
+        isFeatured: true,
+      }
+    ];
+
+    for (const mentor of initialMentors) {
+      await ctx.db.insert("mentors", mentor);
+    }
+
+    return "Database seeded successfully with demo posts and mentors";
   }
 });

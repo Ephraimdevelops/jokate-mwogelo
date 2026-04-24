@@ -155,20 +155,35 @@ export default defineSchema({
         order: v.number(),
     }).index("by_order", ["order"]),
 
-    // Official Press Assets & Media Kits
-    mediaKits: defineTable({
-        label: v.string(), // e.g. "Official Portrait (Format A)"
-        type: v.union(
-            v.literal("portrait"),      // JPG image
-            v.literal("biography"),     // PDF
-            v.literal("speaker_profile"), // PDF
-            v.literal("press_assets"),  // ZIP
-            v.literal("other")
-        ),
-        format: v.string(),             // "JPG", "PDF", "ZIP", "PNG", etc.
-        fileUrl: v.string(),            // Convex Storage or external URL
-        description: v.optional(v.string()),
-        isPublic: v.boolean(),          // Show on press/media download page
-        uploadedAt: v.number(),
+    // Community & Global Leadership Forum (Nguvu Circle)
+    community_members: defineTable({
+        name: v.string(),
+        email: v.string(),
+        country: v.string(),
+        tier: v.union(v.literal('member'), v.literal('leader'), v.literal('inner')),
+        role: v.string(),  // "Student" | "Professional" | "Educator" | "Community Leader"
+        joinedAt: v.number(),
+        status: v.union(v.literal('active'), v.literal('pending'), v.literal('alumni')),
+        source: v.optional(v.string()),
+    }).index("by_email", ["email"]),
+
+    mentors: defineTable({
+        name: v.string(),
+        title: v.string(),
+        organization: v.string(),
+        sector: v.string(),
+        bio: v.string(),
+        photoUrl: v.optional(v.string()),
+        linkedinUrl: v.optional(v.string()),
+        isFeatured: v.boolean(),
+    }).index("by_featured", ["isFeatured"]),
+
+    nguvu_sessions: defineTable({
+        title: v.string(),
+        type: v.union(v.literal('open_circle'), v.literal('leader_cohort'), v.literal('inner_session')),
+        date: v.string(),
+        recordingUrl: v.optional(v.string()),
+        description: v.string(),
+        attendeeCount: v.optional(v.number()),
     }),
 });

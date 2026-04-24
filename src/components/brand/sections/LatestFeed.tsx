@@ -32,7 +32,7 @@ export function LatestFeed() {
               headline={item.title}
               date={item.date}
               href={item.href}
-              thumbnailUrl={item.thumbnailUrl || '/images/jokate-black-suit.png'}
+              thumbnailUrl={item.thumbnailUrl || '/images/jokate-white-suit-2.png'}
               excerpt={item.excerpt}
             />
           </motion.div>

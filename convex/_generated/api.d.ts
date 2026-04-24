@@ -9,6 +9,7 @@
  */
 
 import type * as books from "../books.js";
+import type * as community from "../community.js";
 import type * as ideas from "../ideas.js";
 import type * as inquiries from "../inquiries.js";
 import type * as media from "../media.js";
@@ -27,6 +28,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   books: typeof books;
+  community: typeof community;
   ideas: typeof ideas;
   inquiries: typeof inquiries;
   media: typeof media;

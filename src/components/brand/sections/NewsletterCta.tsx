@@ -23,8 +23,8 @@ export function NewsletterCta() {
 
           <div className="relative w-full h-full max-w-[550px] max-h-[550px] z-10 p-12">
             <Image
-              src="/images/newletter jokate.png"
-              alt="The Pink Circle"
+              src="/images/jokoate.png"
+              alt="Nguvu Circle"
               fill
               className="object-contain drop-shadow-[0_0_50px_rgba(212,74,126,0.2)]"
               priority
@@ -77,42 +77,24 @@ export function NewsletterCta() {
             variants={fadeUp}
             className="text-brand-white font-display text-display-md md:text-display-lg lg:text-display-2xl mb-10 leading-[1.0]"
           >
-            A seat at the table. <br /><span className="text-brand-accent italic">The Pink Circle.</span>
+            A seat at the table. <br /><span className="text-brand-accent italic">Nguvu Circle.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             className="text-brand-muted font-sans text-body-lg mb-14 max-w-[520px] leading-relaxed"
           >
-            The Pink Circle is more than a newsletter—it’s a digital sanctuary for the next generation of African women leaders. A deliberate space where policy meets progress, and where your voice is integrated into the national mandate.
+            Nguvu Circle is East Africa&apos;s first sponsor-funded leadership community for girls and women — built on mentorship, education, and sisterhood. A deliberate space where policy meets progress.
           </motion.p>
 
           <motion.div variants={fadeUp} className="w-full max-w-[500px]">
-            <form className="flex flex-col gap-12" onSubmit={(e) => e.preventDefault()}>
-              <div className="relative group">
-                <label className="text-[10px] uppercase tracking-widest text-brand-accent mb-2 block font-sans">Corporate or Official Email</label>
-                <input
-                  type="email"
-                  placeholder="name@organization.com"
-                  className="w-full bg-transparent border-b border-brand-white/10 text-brand-white placeholder:text-brand-muted/30 focus:outline-none focus:border-brand-accent transition-all duration-700 py-6 text-body-lg font-sans"
-                  required
-                />
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-brand-accent transition-all duration-500 group-focus-within:w-full"></span>
-              </div>
-
-              <div className="flex flex-col gap-6">
-                <button
-                  type="submit"
-                  className="group relative w-full bg-brand-accent text-brand-white hover:bg-brand-white hover:text-brand-black transition-all duration-500 py-7 font-sans uppercase text-[13px] tracking-[0.2em] flex items-center justify-center gap-4 shadow-xl"
-                >
-                  Join the Visionary Circle
-                  <span className="text-[20px] leading-[0] transition-transform duration-500 group-hover:translate-x-3">→</span>
-                </button>
-                <p className="text-[10px] text-brand-muted/40 uppercase tracking-[0.3em] text-center">
-                  Membership is subject to verification.
-                </p>
-              </div>
-            </form>
+            <Link 
+              href="/community"
+              className="group relative w-full bg-brand-accent text-brand-white hover:bg-brand-white hover:text-brand-black transition-all duration-500 py-7 font-sans uppercase text-[13px] tracking-[0.2em] flex items-center justify-center gap-4 shadow-xl"
+            >
+              Join Nguvu Circle — It&apos;s Free
+              <span className="text-[20px] leading-[0] transition-transform duration-500 group-hover:translate-x-3">→</span>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
