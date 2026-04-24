@@ -84,17 +84,6 @@ export default defineSchema({
         size: v.number(),
         uploadedBy: v.optional(v.id("users")),
     }),
-
-    // Community & Global Leadership Forum
-    community_members: defineTable({
-        name: v.string(),
-        email: v.string(),
-        organization: v.optional(v.string()),
-        roleAtOrg: v.optional(v.string()),
-        interestReason: v.optional(v.string()),
-        status: v.union(v.literal("pending"), v.literal("approved"), v.literal("rejected")),
-        joinedAt: v.number(),
-    }).index("by_email", ["email"]),
     
     // Official Correspondence Registry
     inquiries: defineTable({
@@ -165,6 +154,7 @@ export default defineSchema({
         joinedAt: v.number(),
         status: v.union(v.literal('active'), v.literal('pending'), v.literal('alumni')),
         source: v.optional(v.string()),
+        interestReason: v.optional(v.string()),
     }).index("by_email", ["email"]),
 
     mentors: defineTable({
@@ -185,5 +175,22 @@ export default defineSchema({
         recordingUrl: v.optional(v.string()),
         description: v.string(),
         attendeeCount: v.optional(v.number()),
+    }),
+
+    // Official Press Assets & Media Kits
+    mediaKits: defineTable({
+        label: v.string(), 
+        type: v.union(
+            v.literal("portrait"),
+            v.literal("biography"),
+            v.literal("speaker_profile"),
+            v.literal("press_assets"),
+            v.literal("other")
+        ),
+        format: v.string(),
+        fileUrl: v.string(),
+        description: v.optional(v.string()),
+        isPublic: v.boolean(),
+        uploadedAt: v.number(),
     }),
 });

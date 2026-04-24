@@ -86,7 +86,7 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
                   <span className="font-sans text-label text-brand-accent uppercase tracking-widest mb-4 block opacity-80">
                     {move.category}
                   </span>
-                  <h3 className="font-display text-[24px] md:text-[32px] text-brand-white leading-tight mb-4">
+                  <h3 className="font-display text-[18px] md:text-[22px] text-brand-white leading-tight mb-4">
                     {move.name}
                   </h3>
                   <div className="overflow-hidden">
