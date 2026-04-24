@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { ArrowLeft, Calendar, Clock, Share2 } from 'lucide-react'
 
 import { useQuery } from 'convex/react'
-import { api } from '../../../../../convex/_generated/api'
+import { api } from '../../../../convex/_generated/api'
 
 export default function MediaDetail() {
   const params = useParams()
