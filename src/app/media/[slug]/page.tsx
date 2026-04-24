@@ -83,7 +83,7 @@ export default function MediaDetail() {
              </div>
           </div>
 
-          <div className="relative aspect-[16/7] w-full bg-brand-surface overflow-hidden mb-16 lg:mb-24 shadow-2xl">
+          <div className="relative aspect-[3/2] lg:aspect-[16/7] w-full bg-brand-surface overflow-hidden mb-16 lg:mb-24 shadow-2xl">
              <Image src={displayImage} alt={displayHeadline} fill className="object-cover" priority />
           </div>
 

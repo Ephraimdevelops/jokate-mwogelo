@@ -47,7 +47,7 @@ export default function Media() {
       {/* 2. PRESS GRID AREA */}
       <SectionWrapper bg="white" className="py-16 lg:py-24">
          <Tabs defaultValue="all" className="w-full flex flex-col">
-            <div className="flex justify-center mb-12 overflow-x-auto no-scrollbar">
+            <div className="flex justify-start sm:justify-center mb-12 overflow-x-auto no-scrollbar pb-2">
               <TabsList className="bg-transparent border-b border-brand-border rounded-none h-auto p-0 flex gap-8 md:gap-12">
                 {['all', 'award', 'interview', 'speaking', 'reflection'].map(cat => (
                   <TabsTrigger 

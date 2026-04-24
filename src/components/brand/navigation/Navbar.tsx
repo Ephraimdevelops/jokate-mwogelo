@@ -37,7 +37,7 @@ export function Navbar() {
         transition={{ duration: 0.3, ease: 'easeOut' }}
         className="fixed top-0 left-0 w-full z-50 transition-colors"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-container-sm lg:px-container h-24 flex items-center justify-between">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-24 xl:px-32 h-20 lg:h-24 flex items-center justify-between">
           <Link href="/" className="font-display text-[15px] tracking-[0.06em] text-brand-black flex-shrink-0 relative z-50">
             JOKATE MWEGELO.
           </Link>

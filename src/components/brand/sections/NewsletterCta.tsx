@@ -15,7 +15,7 @@ export function NewsletterCta() {
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh]">
 
         {/* Left: Cinematic Visual Side */}
-        <div className="lg:col-span-6 relative h-[60vh] lg:h-auto overflow-hidden bg-brand-black flex items-center justify-center border-r border-brand-white/5">
+        <div className="lg:col-span-6 relative h-[45vh] md:h-[60vh] lg:h-auto overflow-hidden bg-brand-black flex items-center justify-center border-r border-brand-white/5">
           {/* Placeholder/Fallback Pattern if image is missing */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-accent)_1px,_transparent_1px)] [background-size:40px_40px]" />
@@ -75,7 +75,7 @@ export function NewsletterCta() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-brand-white font-display text-display-lg lg:text-display-2xl mb-10 leading-[1.0]"
+            className="text-brand-white font-display text-display-md md:text-display-lg lg:text-display-2xl mb-10 leading-[1.0]"
           >
             A seat at the table. <br /><span className="text-brand-accent italic">The Pink Circle.</span>
           </motion.h2>

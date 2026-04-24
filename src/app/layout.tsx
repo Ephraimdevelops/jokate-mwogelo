@@ -103,7 +103,7 @@ export default function RootLayout({
         >
           <ConvexClientProvider>
             <Navbar />
-            <main className="min-h-screen pt-24 flex flex-col">
+            <main className="min-h-screen pt-20 lg:pt-24 flex flex-col">
               {children}
             </main>
             <Footer />

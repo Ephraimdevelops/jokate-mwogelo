@@ -38,8 +38,8 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
   ]
 
   return (
-    <SectionWrapper bg="surface" className="py-24 lg:py-32">
-      <div className="container mx-auto px-6 mb-20">
+    <SectionWrapper bg="surface" className="py-20 lg:py-32">
+      <div className="mb-20">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -90,7 +90,7 @@ export function InitiativesTeaser({ onOpenModal }: { onOpenModal: (type: 'newsle
                     {move.name}
                   </h3>
                   <div className="overflow-hidden">
-                    <p className="font-sans text-body-sm text-brand-white/80 transition-all duration-500 h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 max-w-[280px]">
+                    <p className="font-sans text-body-sm text-brand-white/80 transition-all duration-500 h-auto opacity-100 lg:h-0 lg:group-hover:h-auto lg:opacity-0 lg:group-hover:opacity-100 max-w-[280px]">
                       {move.desc}
                     </p>
                   </div>

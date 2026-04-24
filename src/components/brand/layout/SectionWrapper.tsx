@@ -28,7 +28,7 @@ export function SectionWrapper({
         viewport={{ once: true, margin: '-80px' }}
         className={cn(
           bgMap[bg],
-          'py-section px-container max-sm:py-section-sm max-sm:px-container-sm overflow-hidden',
+          'py-20 lg:py-24 px-6 md:px-12 lg:px-24 xl:px-32 overflow-hidden',
           className
         )}
       >
